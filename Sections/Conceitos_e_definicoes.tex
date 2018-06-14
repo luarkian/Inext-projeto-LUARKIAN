@@ -438,71 +438,77 @@ A otimização de código \textcolor{red}{consiste na melhoria do código interm
     \legend{Fonte: \cite{aho2007compilers}}
 \end{figure}
 
-\textcolor{red}{Na \autoref{fig:basic_block} apresenta um bloco básico com algumas instruções, no caso aresentando 4 operações entre somas e multiplicação e a partir deste bloco a \autoref{fig:gda} apresenta o GDA deste trecho de código. Nele aprsenta cada nó como uma operação especifica e os terminais como as parcelas das operações.}
-
-%============================
-%Grafo de Fluxo de Controle - GFC 
-%============================
-\subsubsection{Grafo de Fluxo de Controle - GFC}
-\par
-\textcolor{red}{Grafo de fluxo de controle corresponde a um grafo direcionado, no qual cada nó representa blocos básicos e cada aresta representa os caminhos de fluxo entre os blocos basicos.\cite{allen1970control}. É importante ressaltar que saltos determinam o final de um determinado bloco básico, ou seja, saltos indicam um caminho para uma nova região de código básico.\cite{aho2007compilers}.}
-
-
-%============================
-%Eliminção de código morto 
-%============================
-\subsubsection{Eliminção de código morto}
-\par
-\textcolor{red}{Elimincação de código morto é uma técnica busca a eficiência de um programa evitando a execução de instruções não necessária no tempo de execução.\cite{knoop1994partial}. Código morto consiste em instruções que não serão alcançáveis durante o fluxo do programa, sendo esta técnica basicamente a a retirada de qualquer variável que não será utilizada em qualquer outro nó do grafo\cite{aho2007compilers}.}
-
-\par
-\textcolor{red}{A utilização de GAD corresponde na eliminação de qualquer nó raiz, ou seja, nó sem ancestrais, as quais não esteja ativa anexada a mesma. A execução repetida desta operação removerá todos os nós correspondentes a código morto\cite{aho2007compilers}.}
-
-\begin{figure}[htb]
-	\begin{center}
-    \caption{\label{fig:elimicacao_codigo}GAD do bloco básico da \autoref{fig:basic_block}}
-	\includegraphics[scale=0.70]{Figuras/eliminacao_codigo.png}
-	\end{center}
-    \legend{Fonte: \cite{aho2007compilers}}
-\end{figure}
-
-\textcolor{red}{Na \autoref{fig:elimicacao_codigo}, supondo que os nós a,b e c estejam ativa, porém o nó é não esteja, o ultimo pode ser eliminado imediatamente. Os nós restantes continuam no GDA, a menos que não tenho variáveis ativas atreladas aos nós\cite{aho2007compilers}.}
-%============================
-%Analise do fluxo de dados ok
-%============================
-\subsubsection{Analise do fluxo de dados}
-\par
-\textcolor{red}{Analise de fluxo de dados refere-se ao conjunto de tecnicas que derivam informaçoes sobre o fluxo de dados ao longo dos caminhos de execução do programa. Para analise do programa, é necessário considerar todas as posiveis execuções através do grafo de fluxo.\cite{aho2007compilers}.}
-
-%============================
-%Gerador de código ok
-%============================
-\subsubsection{Gerador de código}
-\par
-O gerador de código é responsavél pela tradução final do programa-fonte para o programa-alvo, o mesmo recebe como entrada um código intermediário juntamente com a tabela de símbolos.Faz-se necessário que o programa-fonte tenha sido analisado sintatica e lexicamente, assim evitando que erros possam ser passados para o programa-alvo, por outro lado a existencia de uma nível de otimização, faz-se opicional neste caso\cite{aho2007compilers}.
-
-\par
-\textcolor{red}{O gerador de código possui três tarefs primarias, sendo as mesmas seleção de instrução, alocação de registros e atribuições. A seleção de instruções envolve a escolha das instruções apropriadas da máquina-alvo para implementar as declarações do código intermediario. A atribuição e atribuição de registros envolve a decisão sobre os valores a serem registrados nos registros\cite{aho2007compilers}.}
-
 \end{comment}
 
 \label{chapter:conceitos}
-
+O principal objetivo desse capítulo é apresentar conceitos necessários para o entendimento deste trabalho, de forma clara e direta. Os assuntos abordados neste capítulo são: Comunicação sem fio, Sistemas de localização e Algoritmos de localização RFID.
 \section{Sistemas Embarcados}
     \par
-    Segundo \cite{rodrigo2016} sistemas embarcados estão presente em quase todos os ambientes, tais sistemas possuem uma única função específica e que não pode ser alterada. Eles são controlados por microprocessadores ou microcontroladores de forma que possuem muitas restrições em relação a recursos computacionais.
+    Segundo \citeauthor{rodrigo2016} sistemas embarcados estão presente em quase todos os ambientes, tais sistemas possuem uma única função específica e que não pode ser alterada. Eles são controlados por microprocessadores ou microcontroladores de forma que possuem muitas restrições em relação a recursos computacionais.
 
     \par
     Atualmente é possível encontrar sistemas embarcados em diversos dispositivos, por exemplo: televisores, micro-ondas, sistemas de gerenciamento de aviação, esteiras, etc. Os dispositivos que fazem uso de eletricidade para seu funcionamento, basicamente possuem um sistema embarcado para articular o seu funcionamento \cite{rodrigo2016}.
     
     \subsection{IoT}
-\section{Comunicação Sem Fio}    
-\section{Sistema de Localização}
-    \subsection{Localização Outdoor}
-    \subsubsection{GPS}
-    \subsection{Localização Indoor}
-    \subsubsection{WLAN}
-    \subsubsection{RFID}
+    \par
+    A possibilidade de comunicação entre objetos de uso cotidiano do ambiente real com a internet referência o termo IoT, quando um objeto está conectado a rede de computadores e passa a transmitir informações de seu funcionamento ou estado, tal objeto passa a ser denominado de objeto inteligente \cite{iot2016}.
+    \par
+    De acordo com \citeauthor{iot2017}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o desenvolvimento de uma infinidades de padrões e protocolos para a integração de WSN tornaram IoT uma realidade.
+\section{Comunicação Sem Fio}
+    \par
+    A medida que os elétrons se movimentam ondas eletromagnéticas são criada no espaço, essas ondas são medidas de acordo com suas oscilações e chamadas de frequencia (Hertz), o comprimento dessa onda é medido pela distancia de dois pontos máximos ou dois pontos minímos seguidos \cite{tenenbaum2002}.
+    \par
+    Segundo \citeauthor{tenenbaum2002} ao colocar uma antena em um circuito elétrico apropriado pode-se  transmistir e receber ondas eletromagnéticas, a comunição sem fio é baseada nisso.
+    
+    \subsection{Transmissão por  rádio}
+        \par
+        A transmissão de dados por rádio pode acontecer de duas maneiras: não-direcional e direcional  \cite{torres2001}.
+        
+        \subsubsection{Não-Direcional}
+        \par
+        Quando a transmissão é feita pela forma não-direcional, a frequencias são emitidads em todas as direções e qualquer antena localizada na região de alcance das ondas de rádio podem captar os dados \citeauthor{torres2001}, isso pode ser visto na \autoref{fig:nao_direciona}.
+
+            \begin{figure}[h!]
+              \caption{\label{fig:nao_direciona}{Transmissão não-direcional.}}
+              \centering
+              \includegraphics[width=0.5\textwidth]{Figuras/transmissao_radio_nao_direcional.PNG}
+              \legend{Fonte: \cite{torres2001}}
+            \end{figure}
+        \par
+        A  \autoref{fig:nao_direciona} mostra qua as ondas de radio são emitidas em todas as direções e que qualquer antena/recepetor que estiver no alcance pode receber os dados do emissor.
+        \subsubsection{Direcional}
+        \par
+        Consegquentemente o sistema direcional necessita que os aparelhos transmissores e receptores estejam apontando um na direção do outro para que haja comunicação, sem contar que não pode ter obstaculos entre eles senão dificulta a transmissão \cite{torres2001}. A \autoref{fig:direcional} exemplifica o funcionamento dessa forma de transmissão.
+        \begin{figure}[H]
+              \caption{\label{fig:direcional}{Transmissão direcional.}}
+              \centering
+              \includegraphics[width=0.5\textwidth]{Figuras/transmissao_radio_direcional.PNG}
+              \legend{Fonte: \cite{torres2001}}
+        \end{figure}
+        \par
+        De outro modo a \autoref{fig:direcional} mostra que o primeiro transmissor dever estar direcionado para a direcção do segundo trasmissor, e assim dever acontecer com o segundo transmissor também.
+            
+\section{Localização}
+\par
+Segundo \citeauthor{rfid2009review}, as informações situacionais de pessoas ou objetos têm um papel muito importante nas aplicações, desse forma é possível saber a posição dos objetos ou pessoas para assim fazer um monitoramento ou utilizar para várias outras aplicações. Esta seção aborda os tipos e sistemas de localização.
+    \subsection{GPS}
+    \par
+    GPS é um sistema de posicionamento global implementado pelo programa NAVSTAR (Navigation System Timing and Ranging), iniciado no ano de 1973. Era mantido pela divisão de sistema espacial dos Estados Unidos e era destinado apenas para uso militar \cite{gpsEduardo2005}.
+    \par
+   O principal objetivo do uso de GPS é determinar as coordenadas espaciais de pontos referentes a um sistema mundial, para isso o sistema faz uso de distâncias entre quatros satélites, a posição do receptor é calculada a partir dos sinais recebido pelos satélites \cite{gpsEduardo2005}.
+
+   \begin{figure}[H]
+              \caption{\label{fig:satelites}{Constelação de Satélites.}}
+              \centering
+              \includegraphics[width=0.5\textwidth]{Figuras/gps_satelites.PNG}
+              \legend{Fonte: \cite{gpsEduardo2005}}
+        \end{figure}
+        \par
+        A  \autoref{fig:satelites} mostra a movimentação dos satélites em torno da Terra para assim enviar sinais para os receptores que por sus vez interpretam esses sinais resultando em seu posicionamento na Terra.
+    \subsection{WLAN}
+    \par
+    
+    \subsection{RFID}
 \subsection{Sistemas de Localização }
     \subsubsection{LANDMARC}
     \subsubsection{RADAR}
