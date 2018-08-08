@@ -2,7 +2,13 @@
 %===========================================================
 %INTRODUÇÃO
 %===========================================================
-
+As conexões entre computadores que chamavam de "redes de computadores" quando se referia a um conjunto de computadores autônomos interconectados \cite{tenenbaum2002}, esse conceito está absoleto pois não se tem apenas computadores conectados, mas diversos dispositivos que podem ser ou não semelhantes, podendo ser cameras, sensores, smartphones, ou qualquer objeto que possua um hardware com capacidade de conectividade \cite{iot2016SBRC}.
+\par
+Com os avanços tecnológios interações com objetos tornou-se cada vez mais frequênte, isso se deu a um paradigma que visa uma interligação de objetos em rede para interação e cooperação podendo mudar ou não a forma como as atividades rotineiras serão realizadas, esse modelo é chamado de \textit{Internet of Things (IoT)} \cite{realtimeRFID2016}.
+\par
+A IoT que também está relacionada com computação ubíqua é chamada de tecnologia do futuro, a comunicação de diferentes dispositivos, edificios ou qualquer equipamente que possua um microcontrolador ou microprocessador embutido e que podem se conectar a redes para assim ter uma comunicação com outros se encaixa nessa relação \cite{mechanismRFID2006}.
+\par
+ A interligação dos objetos as redes possibilitou que o meio cientifico propursessem várias maneiras de localização em ambientes confinados, visto que o GPS não funciona tão bem em tais ambientes \cite{mechanismRFID2006}, e a utilização de leitores e tags RFID ganhou grande foco já que além de localizar possibilita a identiicação.
 % %===========================================================
 % %MOTIVAÇÃO
 % %===========================================================
@@ -26,16 +32,16 @@ O problema considerado neste trabalho é expresso na seguinte questão: \textbf{
 %OBJETIVOS GERAIS E ESPECIFICOS
 %===========================================================
 \section{Objetivos}
-O objetivo principal deste trabalho é analisar, se possível melhorar as técnicas existentes de localização utilizando RFID em ambientes internos e propor uma forma de localizar e identificar objetos em ambientes internos por meio de RFID.
+O objetivo principal deste trabalho é analisar, se possível utilizar algumas das técnicas existentes de localização indoor para localizar e identificar objetos em ambientes internos por meio de tags RFID.
 \par
 Objetivos específicos:
 \begin{enumerate}
 
-    \item Localizar e identificar objetos em ambientes internos utilizando RFID.
+    \item Localizar objetos em ambientes confinados utilizando tags RFID.
     
-    \item Obter o posicionamento dos objetos para uma localização mais precisa.
+    \item Identificar objetos em ambientes internos utilizando tags RFID.
     
-    \item Monitorar objetos caso mudem de posição ou localização no ambiente, a fim de ter um controle sob os objetos cadastrados no sistema.
+    \item Monitorar objetos caso mudem de localização no ambiente, a fim de ter um controle sob os objetos cadastrados no sistema.
     
 \end{enumerate}
 
@@ -46,13 +52,15 @@ Objetivos específicos:
 %===========================================================
 \section{Metodologia Proposta}
 
-
-\begin{comment}
 %===========================================================
 %CONTRIBUIÇÕES PROPOSTAS
 %===========================================================
 \section{Contribuições propostas}
-
+As contribuições propostas deste trabalho são:
+\begin{enumerate}
+    \item A implementação de um sistema para localização de objetos. O Metódo utilizado visa localizar objeto sem alta precisão, porém é viável para controle de acervos.
+    \item O sistema desevolvido pode auxiliar no controle e ainda facilitar o levantamento de todos os bens do proprietário.
+\end{enumerate}
 
 
 %===========================================================
@@ -62,18 +70,15 @@ Objetivos específicos:
 A introdução deste trabalho apresentou: o contexto, definição do problema, objetivos, metodologia e contribuições dessa pesquisa. Os capítulos restantes são organizados da seguinte forma:
 
 \par
-No \autoref{chapter:conceitos} \textbf{Conceitos e Definições}, são apresentados os conceitos abordados neste trabalho, especificamente: Linguagens de descrição de hardware, Verificação e Validação de Sistemas e Técnicas de Compiladores.
+No \autoref{chapter:conceitos} \textbf{Conceitos e Definições}, são apresentados fundamentos teóricos que abordam os seguintes assuntos: sistemas embarcados, localização de objetos, algoritmos utilizados em localização e modelagem de sistemas.
 
 \par
-No \autoref{chapter:correlatos} \textbf{Trabalhos Correlatos}, será apresentado o método de pesquisa utilizado, mas também, os resultados alcançados com a pesquisa, análise dos artigos e a contribuição dos mesmos para o desenvolvimento do método apresentado neste trabalho.
+No \autoref{chapter:correlatos} \textbf{Trabalhos Correlatos}, são apresentados trabalhos correlatos a utilização de RFID e localização.
 
 \par
-No \autoref{chapter:metodo} \textbf{Método Proposto}, é descrito as etapas de execução do novo método proposto. Em especial, são descritos o método de transformação do código, a utilização das assertivas e a integração da ferramenta ESBMC no contexto do método.
+No \autoref{chapter:metodo} \textbf{Método Proposto}, é descrito as etapas de desenvolvimento deste trabalho, de forma a mostrar a arquitetura do sistema proposto e componentes necessários para a aplicação.
 
 \par
-No \autoref{chapter:resultados} \textbf{Resultados Experimentais}, descreve-se a execução de uma avaliação experimental sobre o método proposto, bem como, 
-\textit{benchmarks} utilizados para testes da ferramenta e os resultados obtidos através destes testes.
+%No \autoref{chapter:resultados} \textbf{Resultados Experimentais}, descreve-se a execução de uma avaliação experimental 
 \par
-E por fim no \autoref{chapter:consideracoes} \textbf{Considerações parciais e trabalhos futuros}, apresenta-se as considerações parciais e os trabalhos futuros a serem desenvolvidos. 
-
-\end{comment}
+E por fim no \autoref{chapter:consideracoes} \textbf{Considerações parciais e trabalhos futuros}, será apresentado as considerações parciais e trabalhos futuros.
