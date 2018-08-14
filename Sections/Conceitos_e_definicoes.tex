@@ -34,7 +34,7 @@ O principal objetivo desse capítulo é apresentar conceitos necessários para o
               \legend{Fonte: \cite{imgIot}}
         \end{figure}
     \par
-    A \autoref{fig:iot} representa bem o cenário que IoT proporciona, na imagem é possível notar que todos os objetos estão conectado por uma espécie de cabo azul, mas isso é so uma representação, essa conectividade também pode ser através de conectividade sem fio. Ainda sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas pelos objetos para o usuário.
+    A \autoref{fig:iot} representa bem o cenário que IoT proporciona, na imagem é possível notar que todos os objetos estão conectado por uma espécie de cabo azul, mas isso é so uma representação, essa conexão também pode ser através de conectividade sem fio. Ainda sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas pelos objetos para o usuário.
     % relação de iot com sistemas embarcados
     
 \section{Comunicação Sem Fio}
@@ -162,7 +162,12 @@ Segundo \citeauthor{rfid2009review}, as informações situacionais de pessoas ou
 \section{Algoritmos de Localização indoor}
 Nesta seção serão abordados alguns dos algoritmos que já foram utilizados para localização em ambientes indoor.
     \subsection{Multilateração}
-    A multilaterção estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de refrência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências 
+    A multilaterção estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de refrência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências, é um método utilizado para suprir a trilaterção. A inserção de mais nós tem por finalidade aumentar a precisão e diminuir a região de incerteza \cite{rfid2009review}.
+    \par
+    Os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão repesentado por R_k, k = \left[ \textit{1, 2, ...,n} \right] com suas coordenadas ja conhecidas( x_k, y_k), T representando o nó alvo com coordenadas desconhecidas (x,y), podemos estimar utilizando a fórmula da distância da geometria analitica
+     \Bigg\{ r_1^2 = (x - x_1 )^2 + (y - y_1)^2\\
+     r_2^2 = (x - x_2 )^2 + (y - y_2)^2
+
     \subsection{Inferência Bayesiana}
     \subsection{Nearest-neighbor}
     \subsection{Proximidade}
