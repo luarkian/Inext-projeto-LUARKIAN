@@ -164,9 +164,18 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \subsection{Multilateração}
     A multilaterção estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de refrência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências, é um método utilizado para suprir a trilaterção. A inserção de mais nós tem por finalidade aumentar a precisão e diminuir a região de incerteza \cite{rfid2009review}.
     \par
-    Os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão repesentado por R_k, k = \left[ \textit{1, 2, ...,n} \right] com suas coordenadas ja conhecidas( x_k, y_k), T representando o nó alvo com coordenadas desconhecidas (x,y), podemos estimar utilizando a fórmula da distância da geometria analitica
-     \Bigg\{ r_1^2 = (x - x_1 )^2 + (y - y_1)^2\\
-     r_2^2 = (x - x_2 )^2 + (y - y_2)^2
+    Segundo \citeauthor{rfid2009review} os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão repesentado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas ja conhecidas $( x_k, y_k )$, $T$ representando o nó alvo com coordenadas desconhecidas $(x,y)$, podemos estimar utilizando a fórmula da distância da geometria analítica
+    \par $r_1^2 = (x - x_1 )^2 + (y - y_1)^2$
+    \par $r_2^2 = (x - x_2 )^2 + (y - y_2)^2$
+    \par ...
+    \par $r_n^2 = (x - x_n )^2 + (y - y_n)^2$
+    \par 
+    Depois subtraimos cada uma das equações a partir da primeira para denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida linearizamos o sistema
+    \par $b_{21} = x(x_1 - x_2) + y(y_1 - y_2)$
+    \par $b_{31} = x(x_1 - x_3) + y(y_1 - y_3)$
+    \par ...
+    \par $b_{n1} = x(x_1 - x_n) + y(y_1 - y_n)$
+    \par que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
 
     \subsection{Inferência Bayesiana}
     \subsection{Nearest-neighbor}
