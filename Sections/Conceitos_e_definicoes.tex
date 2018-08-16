@@ -184,15 +184,14 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \begin{figure}[H]
               \caption{\label{fig:bayesian}{Rede Bayesiana}}
               \centering
-              \includegraphics[width=0.4\textwidth]{Figuras/baysian network.png}
+              \includegraphics[width=0.4\textwidth]{Figuras/bayesian_network.PNG}
               \legend{Fonte: \cite{rfid2009review}}
         \end{figure}
 
         Na \autoref{fig:bayesian} temos uma representação de uma rede bayesiana para localização estacionária, onde as coordenadas $(x,y)$ representam o nó que será localizado e o $S_i$, $i=1,...,n$ são uma série de intesidades de sinais trasmitidas ou recibidas pelos pontos de refências do sistema, como nesse sistema as probabilidade de $S_i$ são idependentes e não interferem uma na outra dizemos que há uma satisfação em relação a condição de Markov \cite{rfid2009review}.
         \par
         \citeauthor{rfid2009review} afirma que a localização do dispositvo alvo pode ser obtida atravé da fórmula recursiva 
-        $P((x,y) | s_1, s_2, ..., s_n) = \alphaP(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$
-        , nessa expressão $\alpha$ é um fator de nomalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante resaltar que essa é uma expressão para localizar alvos estáticos. 
+        $P((x,y) | s_1, s_2, ..., s_n) = \alpha P(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$, nessa expressão $\alpha$ é um fator de nomalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante resaltar que essa é uma expressão para localizar alvos estáticos. 
     \subsection{Nearest-neighbor}
     \subsection{Nearest-neighbor}
     \subsection{Proximidade}
