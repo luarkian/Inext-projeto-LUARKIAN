@@ -178,6 +178,21 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \par que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
 
     \subsection{Inferência Bayesiana}
+     Segundo \citeauthor{bayesian2001} a inferência bayesiana é dedução estatística através de evidências ou analíse observatória para que a inferência de uma hipótese possa vir a ser verdadeira, e no caso da localização de um dispositvo isso pode ser realizado utilizando RSSI entre o nó de destino e os pontos de acesso.
+
+
+    \begin{figure}[H]
+              \caption{\label{fig:bayesian}{Rede Bayesiana}}
+              \centering
+              \includegraphics[width=0.4\textwidth]{Figuras/baysian network.png}
+              \legend{Fonte: \cite{rfid2009review}}
+        \end{figure}
+
+        Na \autoref{fig:bayesian} temos uma representação de uma rede bayesiana para localização estacionária, onde as coordenadas $(x,y)$ representam o nó que será localizado e o $S_i$, $i=1,...,n$ são uma série de intesidades de sinais trasmitidas ou recibidas pelos pontos de refências do sistema, como nesse sistema as probabilidade de $S_i$ são idependentes e não interferem uma na outra dizemos que há uma satifação em relação a condição de Markov \cite{rfid2009review}.
+        \par
+        \citeauthor{rfid2009review} afirma que a localização do dispositvo alvo pode ser obtida atravé da fórmula recursiva 
+        $P((x,y) | s_1, s_2, ..., s_n) = \alphaP(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$
+        , nessa expressão $\alpha$ é um fator de nomalização 
     \subsection{Nearest-neighbor}
     \subsection{Proximidade}
     \subsection{Aprendizado Baseada em Kernel}
