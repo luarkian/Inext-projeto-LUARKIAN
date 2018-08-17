@@ -193,7 +193,34 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         \citeauthor{rfid2009review} afirma que a localização do dispositvo alvo pode ser obtida atravé da fórmula recursiva 
         $P((x,y) | s_1, s_2, ..., s_n) = \alpha P(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$, nessa expressão $\alpha$ é um fator de nomalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante resaltar que essa é uma expressão para localizar alvos estáticos. 
         
-    \subsection{Nearest-neighbor}
+    \subsection{K-Nearest-Neighbor}
+    Os algoritmos de vizinhaça ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve utilizar os nó ja classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN}, de outro modo, utilizar-se dos seus vizinhos para assim obter suas coordenadas com os cálculos baseados em RSSI \cite{rfid2009review}.
+
+    \par
+    algumas das metricas abordada por \citeauthor{knn-3dLAN} são:
+
+    \begin{itemsize}
+    \item Distância Euclidiana 
+      \par
+      $Dist(r,s) =  \sqrt{(x_r - x_s)(x_r - x_s)^\prime}$
+    \item Padronização da Distância Euclidiana
+      \par 
+      $Dist(r,s) =  \sqrt{(x_r - x_s)D^-1(x_r - x_s)^\prime}$
+    \item Distância de Mahalanobis
+      \par
+        $Dist(r,s) =  \sqrt{(x_r - x_s)V^-1(x_r - x_s)^\prime}$
+    \item Distância de Manhattan
+      \par
+      $Dist(r,s) = \sum_{j=1}^{n} |x_{rj} - x_{sj}|$
+    \item Distancia de Minkowski
+      \par
+      $Dist(r,s) = \sqrt{p}{\sum_{j=1}^{n}|x_{rj} - x_{sj}|^p}$
+    \end{itemsize}
+   \citeauthor{rfid2009review} faz uma mostra uma outra abordagem para calcular as coordenadas do alvo,
+   
+   $\left \{ \begin{matrix} x= \sum_{i=1}^{k}w_{i}x_{i}, y= \sum_{i=1}^{k}w_{i}y_{i}\\ \end{matrix}
+
+    
     \subsection{Proximidade}
     \subsection{Aprendizado Baseada em Kernel}
 \section{Modelagem e Prototipação de Sistemas}
