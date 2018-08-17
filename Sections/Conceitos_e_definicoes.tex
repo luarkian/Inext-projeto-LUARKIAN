@@ -165,16 +165,24 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     A multilaterção estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de refrência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências, é um método utilizado para suprir a trilaterção. A inserção de mais nós tem por finalidade aumentar a precisão e diminuir a região de incerteza \cite{rfid2009review}.
     \par
     Segundo \citeauthor{rfid2009review} os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão repesentado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas ja conhecidas $( x_k, y_k )$, $T$ representando o nó alvo com coordenadas desconhecidas $(x,y)$, podemos estimar utilizando a fórmula da distância da geometria analítica
-    \par $r_1^2 = (x - x_1 )^2 + (y - y_1)^2$
-    \par $r_2^2 = (x - x_2 )^2 + (y - y_2)^2$
-    \par ...
-    \par $r_n^2 = (x - x_n )^2 + (y - y_n)^2$
+    
+    $\left \{ \begin{array}{1}
+        r_1^2 = (x - x_1 )^2 + (y - y_1)^2 & \\
+        r_2^2 = (x - x_2 )^2 + (y - y_2)^2 & \\
+        ... & \\
+        r_n^2 = (x - x_n )^2 + (y - y_n)^2 &
+   \end{array}$
     \par 
     Depois subtraímos cada uma das equações a partir da primeira para denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida linearizamos o sistema
-    \par $b_{21} = x(x_1 - x_2) + y(y_1 - y_2)$
-    \par $b_{31} = x(x_1 - x_3) + y(y_1 - y_3)$
-    \par ...
-    \par $b_{n1} = x(x_1 - x_n) + y(y_1 - y_n)$
+    
+    $\left \{ \begin{array}{1}
+        b_{21} = x(x_1 - x_2) + y(y_1 - y_2) & \\
+        b_{31} = x(x_1 - x_3) + y(y_1 - y_3) & \\
+        ... & \\
+        b_{n1} = x(x_1 - x_n) + y(y_1 - y_n) &
+   \end{array}$
+    
+    
     \par que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
 
     \subsection{Inferência Bayesiana}
@@ -199,7 +207,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \par
     algumas das metricas abordada por \citeauthor{knn-3dLAN} são:
 
-    \begin{itemsize}
+    \begin{itemize}
     \item Distância Euclidiana 
       \par
       $Dist(r,s) =  \sqrt{(x_r - x_s)(x_r - x_s)^\prime}$
@@ -214,13 +222,23 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
       $Dist(r,s) = \sum_{j=1}^{n} |x_{rj} - x_{sj}|$
     \item Distancia de Minkowski
       \par
-      $Dist(r,s) = \sqrt{p}{\sum_{j=1}^{n}|x_{rj} - x_{sj}|^p}$
-    \end{itemsize}
-   \par
-   \citeauthor{rfid2009review} faz uma mostra uma outra abordagem para calcular as coordenadas do alvo,
-   
-   $\left \{ \begin{matrix} x= \sum_{i=1}^{k}w_{i}x_{i},\\ y= \sum_{i=1}^{k}w_{i}y_{i} \end{matrix}$
+      $Dist(r,s) = \sqrt[p]{\sum_{j=1}^{n}|x_{rj} - x_{sj}|^p}$
 
+    \end{itemize}
+   \par
+   \citeauthor{rfid2009review} faz mostra uma outra abordagem para calcular as coordenadas do alvo obtidos a partir do sistema a seguir:
+   
+   $\left \{ \begin{array}{1}
+        x= \sum_{i=1}^{k}w_{i}x_{i} &  \\
+        y= \sum_{i=1}^{k}w_{i}y_{i} & 
+   \end{array}$ \\
+    nesse sistema o $k$ representa a quantidade de vizinhos, $(x_i,y_i)$ são as coordenadas dos pontos de refências vizinhos e $w_i$ os pesos desses pontos,o cálculo dos pesos é feito a partir da diferençã de RSSI entre os pontos de refências e o alvo e as fórmulas para tal são:
+    \begin{itemize}
+        \item $w_i = \frac{1 / \sum_{j=1}^{m}|s_{ij} - s_{j}|}{\sum_{j=1}^{k} (1/ \sum_{j=1}^{m}|s_{ij} - s_{j}|)}$ 
+        
+        \item  $w_i = \frac{1 / \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2}}{\sum_{j=1}^{k} (1/ \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2})}$ 
+    \end{itemize}\\
+    nas expressões de $w_i$, dizemos que $s_j$ e $s_{ij}$, $j =1, ..., m$ represetam  RSSI dos respectivos ponto de referências e no alvo localizado. 
     
     \subsection{Proximidade}
     \subsection{Aprendizado Baseada em Kernel}
