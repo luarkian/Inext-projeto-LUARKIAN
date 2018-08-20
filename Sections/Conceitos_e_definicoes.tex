@@ -238,9 +238,11 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         
         \item  $w_i = \frac{1 / \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2}}{\sum_{j=1}^{k} (1/ \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2})}$ 
     \end{itemize}\\
-    nas expressões de $w_i$, dizemos que $s_j$ e $s_{ij}$, $j =1, ..., m$ represetam  RSSI dos respectivos ponto de referências e no alvo localizado. 
+    nas expressões de $w_i$, dizemos que $s_j$ e $s_{ij}$, $j =1, ..., m$ represetam  RSSI dos respectivos ponto de referências e nó alvo que será localizado. 
     
     \subsection{Proximidade}
+    A técnica de Proximidade, segundo \citeauthor{rfidProximity} baseia-se no princípio de que se o alvo está no alcance de uma antena ou leitor, sua localização será a mesma que a da antena e se o alvo está no alcance de duas ou mais antenas, a localização dada é aquela cujo possui a intensidade do sinal mais forte. Já para \citeauthor{rfid2009review} quando o alvo esta no alcance de dois ou mais receptores, utiliza-se o calculo de centroíde para estimar a localização.
+    
     \subsection{Aprendizado Baseada em Kernel}
 \section{Modelagem e Prototipação de Sistemas}
     \subsection{UML}
