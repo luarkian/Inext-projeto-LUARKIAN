@@ -121,7 +121,7 @@ Segundo \citeauthor{rfid2009review}, as informações situacionais de pessoas ou
         
         \item {Reconhecimento de padrões }
         \par
-        O RSSI é o principal requisito dessa técnica, em que é feita medições prévias para fazer uma comparação com os dados do banco de dados. Inicialmente é necessário uma fase em que é feita a calibração para se obter o mapa de assinatura \cite{wifiFernandes}.
+        O RSS é o principal requisito dessa técnica, em que é feita medições prévias para fazer uma comparação com os dados do banco de dados. Inicialmente é necessário uma fase em que é feita a calibração para se obter o mapa de assinatura \cite{wifiFernandes}.
         
         \par
         O mapa de assinatura é basicamente dados do banco que representam a coleção das medidas de RSSI em diferentes locais para todos os pontos de acesso no ambiente \cite{wifiFernandes}. Na \autoref{fig:fingerprinting} é mostrado seu funcionamento, onde cada ponto de acesso se comunica com o servidor para assim fazer uma comparação com os dados do mapa de assinatura.
@@ -166,27 +166,25 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \par
     Segundo \citeauthor{rfid2009review} os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão repesentado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas ja conhecidas $( x_k, y_k )$, $T$ representando o nó alvo com coordenadas desconhecidas $(x,y)$, podemos estimar utilizando a fórmula da distância da geometria analítica
     
-    $\left \{ \begin{array}{1}
-        r_1^2 = (x - x_1 )^2 + (y - y_1)^2 & \\
-        r_2^2 = (x - x_2 )^2 + (y - y_2)^2 & \\
-        ... & \\
-        r_n^2 = (x - x_n )^2 + (y - y_n)^2 &
-   \end{array}$
+    $\left \{ \begin{array}{c}
+        r_1^2 = (x - x_1 )^2 + (y - y_1)^2  \\
+        r_2^2 = (x - x_2 )^2 + (y - y_2)^2  \\
+        ...  \\
+        r_n^2 = (x - x_n )^2 + (y - y_n)^2 
+   \end{array} \right.$
     \par 
     Depois subtraímos cada uma das equações a partir da primeira para denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida linearizamos o sistema
     
-    $\left \{ \begin{array}{1}
-        b_{21} = x(x_1 - x_2) + y(y_1 - y_2) & \\
-        b_{31} = x(x_1 - x_3) + y(y_1 - y_3) & \\
-        ... & \\
-        b_{n1} = x(x_1 - x_n) + y(y_1 - y_n) &
-   \end{array}$
-    
-    
-    \par que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
+    $\left \{  \begin{array}{c}
+        b_{21} = x(x_1 - x_2) + y(y_1 - y_2)  \\
+        b_{31} = x(x_1 - x_3) + y(y_1 - y_3)  \\
+        ...  \\
+        b_{n1} = x(x_1 - x_n) + y(y_1 - y_n)
+   \end{array} \right.$\\
+     que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
 
     \subsection{Inferência Bayesiana}
-  Segundo \citeauthor{bayesian2001} a inferência bayesiana é dedução estatística através de evidências ou analíse observatória para que a inferência de uma hipótese possa vir a ser verdadeira, e no caso da localização de um dispositvo isso pode ser realizado utilizando RSSI entre o nó de destino e os pontos de acesso.
+  Segundo \citeauthor{bayesian2001} a inferência bayesiana é dedução estatística através de evidências ou analíse observatória para que a inferência de uma hipótese possa vir a ser verdadeira, e no caso da localização de um dispositvo isso pode ser realizado utilizando RSS entre o nó de destino e os pontos de acesso.
 
 
     \begin{figure}[H]
@@ -202,7 +200,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         $P((x,y) | s_1, s_2, ..., s_n) = \alpha P(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$, nessa expressão $\alpha$ é um fator de nomalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante resaltar que essa é uma expressão para localizar alvos estáticos. 
         
     \subsection{K-Nearest-Neighbor}
-    Os algoritmos de vizinhaça ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve utilizar os nó ja classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN}, de outro modo, utilizar-se dos seus vizinhos para assim obter suas coordenadas com os cálculos baseados em RSSI \cite{rfid2009review}.
+    Os algoritmos de vizinhaça ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve utilizar os nó ja classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN}, de outro modo, utilizar-se dos seus vizinhos para assim obter suas coordenadas com os cálculos baseados em RSS \cite{rfid2009review}.
 
     \par
     algumas das metricas abordada por \citeauthor{knn-3dLAN} são:
@@ -228,22 +226,22 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
    \par
    \citeauthor{rfid2009review} faz mostra uma outra abordagem para calcular as coordenadas do alvo obtidos a partir do sistema a seguir:
    
-   $\left \{ \begin{array}{1}
-        x= \sum_{i=1}^{k}w_{i}x_{i} &  \\
-        y= \sum_{i=1}^{k}w_{i}y_{i} & 
-   \end{array}$ \\
+   $\left \{ \begin{array}{c}
+        x= \sum_{i=1}^{k}w_{i}x_{i}   \\
+        y= \sum_{i=1}^{k}w_{i}y_{i}  
+   \end{array} \right.$ \\
     nesse sistema o $k$ representa a quantidade de vizinhos, $(x_i,y_i)$ são as coordenadas dos pontos de refências vizinhos e $w_i$ os pesos desses pontos,o cálculo dos pesos é feito a partir da diferençã de RSSI entre os pontos de refências e o alvo e as fórmulas para tal são:
     \begin{itemize}
         \item $w_i = \frac{1 / \sum_{j=1}^{m}|s_{ij} - s_{j}|}{\sum_{j=1}^{k} (1/ \sum_{j=1}^{m}|s_{ij} - s_{j}|)}$ 
         
         \item  $w_i = \frac{1 / \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2}}{\sum_{j=1}^{k} (1/ \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2})}$ 
-    \end{itemize}\\
+    \end{itemize}$\\$
     nas expressões de $w_i$, dizemos que $s_j$ e $s_{ij}$, $j =1, ..., m$ represetam  RSSI dos respectivos ponto de referências e nó alvo que será localizado. 
     
     \subsection{Proximidade}
     A técnica de Proximidade, segundo \citeauthor{rfidProximity} baseia-se no princípio de que se o alvo está no alcance de uma antena ou leitor, sua localização será a mesma que a da antena e se o alvo está no alcance de duas ou mais antenas, a localização dada é aquela cujo possui a intensidade do sinal mais forte. Já para \citeauthor{rfid2009review} quando o alvo esta no alcance de dois ou mais receptores, utiliza-se o calculo de centroíde para estimar a localização.
     
-    \subsection{Aprendizado Baseada em Kernel}
+    %\subsection{Aprendizado Baseada em Kernel}
 \section{Modelagem e Prototipação de Sistemas}
     \subsection{UML}
     \subsection{Redes de Petri}
