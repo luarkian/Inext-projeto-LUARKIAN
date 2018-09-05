@@ -15,6 +15,13 @@ Segundo \citeauthor{mechanismRFID2006} o LANDMARC funciona da seguinte maneira: 
 O método utilizado por \citeauthor{mechanismRFID2006} tem objetivo de ter alcançar grande precisão no posicionamento em relação ao ambiente, já o método proposto nesse trabalho tem objetivo de saber exatamente a sala que os objetos estão, tendo em vista que o ambiente possui inúmeras salas. Entretando essa aplicação para posicinamento na sala pode ser acrescentado e estudada em trabalhos futuros.
 
 \section{Real-Time Locating Systems Using Active RFID for Internet of Things}
+O trabalho de \citeauthor{realtimeRFID2016} propõe um sistema de localizção em tempo real, o iLocate é mais um sistema que faz uso de tags ativas, e  utilizar-se de ZigBee para assim assegurar que a transmissão de dados a longa distância seja garantida. 
+\par
+O sistema proposto por \citeauthor{realtimeRFID2016} inicialmente aplica uma técnica de \textit{fingerprinting} que seria uma técnica equivalente ao reconhecimento de padrões abordada em \autoref{subsection:wlan}, iniciando com uma leituras breve de RSSI e implantação de tags de referências no mapa de interesse, seguindo para o armazenamento das leituras no banco de dados e construção de uma matriz com dados de RSSI. 
+\par 
+O iLocate conta com um refinamento para ter uma localização mais precisa, que funciona criando tags de referência virtuais que também utiliza a técnica de \textit{fingerprinting} para comparar com a reais. Outro recurso encontrado no iLocale é a comunicação tag-tag em que possibilita a troca de mensagens entre tags de referências que estão no mesmo intervalo de trabalho \cite{realtimeRFID2016}.
+\par
+A utilização de uma base de dados por \citeauthor{realtimeRFID2016} é um recurso que também será utilizado no sistema proposto nesse trabalho, por mais que os dados armazedos sejam diferentes o banco de dados terá função importante.
 
 \section{Object localization using RFID}
 Na pesquisa de \citeauthor{localization2010} é proposto um método de localização que permite estimar a posição de objetos com rapidez e velocidade utilizando a variação dos níveis de potência dos leitores, o método ainda faz uso de tags de referência para auxiliar na localização das tags que serão rastreadas.
