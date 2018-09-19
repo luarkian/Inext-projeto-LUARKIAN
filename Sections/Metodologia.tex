@@ -1,5 +1,21 @@
 
 \label{chapter:metodo}
-Este Capítulo 
+Este Capítulo tem o objetivo de descrever a metodologia proposta neste trabalho, visando localizar e identificar objetos em ambientes confinados utilizando leitores e etiquetas passivas RFID, para gerenciamento e controle de bens.
 
 \section{Visão geral do método}
+O método consiste em um sistema que localiza qualquer objeto que tenha uma etiqueta RFID passiva fixada em seu corpo, as etiquetas serão localizadas e identificadas a medida em que transitam de uma sala para outra em um edifício. A localização e identificação é feita por meio de leitores RFID e controladores colados próximos a porta e os leitores devem ler tags que passam pela porta.
+\par
+Cada leitor junto ao controlador será responsável por uma sala, portanto qualquer etiqueta lida por aquele leitor ocasionará nas ações referentes a mesma sala. As ações poderá ser de atualização sobre a localização do objeto ou informando que o objeto está em transição para outra sala no edifício.
+\begin{figure}[H]
+              \caption{\label{fig:modelo}{Modelo Proposto}}
+              \centering
+              \includegraphics[width=1.0\textwidth]{Figuras/visao_geral.png}
+              \legend{Fonte: Própria}
+        \end{figure}
+\par
+Na \autoref{fig:modelo} é possivel notar que há um dispositivo acoplado proximo a porta de cada sala, esse dispositivo cotém o leitor RFID, esse dispositvo será encarrecado de consultar um servidor para assim tomar decisões do que será feito com o status do objeto, os objetos na imagem são representados por circulos, cada objtetos possui uma tag RFID fixada nele e quando passar pela porta o leitor identifica o objeto e altera sua localização. 
+\section{Localização dos objetos}
+Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, ou seja, a partir do momento em que o leitor RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
+\par
+O sistema conterá um servidor que possui a função de tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, o papel do servidor é de grande importância também sendo utilizado para consultar informações referentes aos objetos. 
+
