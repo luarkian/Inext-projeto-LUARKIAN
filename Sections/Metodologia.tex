@@ -9,11 +9,22 @@ Cada leitor junto ao controlador será responsável por uma sala, portanto qualq
 \begin{figure}[H]
               \caption{\label{fig:modelo}{Modelo Proposto}}
               \centering
-              \includegraphics[width=1.0\textwidth]{Figuras/visao_geral.png}
+              \includegraphics[width=1.1\textwidth]{Figuras/bigpicture.png}
               \legend{Fonte: Própria}
         \end{figure}
 \par
-Na \autoref{fig:modelo} é possivel notar que há um dispositivo acoplado proximo a porta de cada sala, esse dispositivo cotém o leitor RFID, esse dispositvo será encarrecado de consultar um servidor para assim tomar decisões do que será feito com o status do objeto, os objetos na imagem são representados por circulos, cada objtetos possui uma tag RFID fixada nele e quando passar pela porta o leitor identifica o objeto e altera sua localização. 
+Na \autoref{fig:modelo} é possivel notar que há um dispositivo acoplado proximo a porta de cada sala, esse dispositivo cotém o leitor RFID, esse dispositvo será encarrecado de consultar um servidor para assim tomar decisões do que será feito com o status do objeto, cada objtetos possui uma tag RFID fixada nele e quando passar pela porta o leitor identifica o objeto e altera sua as informações sobre sua localização.
+
+\section{Fluxo de execução do método}
+Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado na \autoref{fig:fluxograma}. Esse fluxo exemplifica as tarefas que cada dispositivos executarão.
+\begin{figure}[H]
+              \caption{\label{fig:fluxograma}{Fluxograma de cada sala}}
+              \centering
+              \includegraphics[width=1\textwidth]{Figuras/fluxograma.png}
+              \legend{Fonte: Própria}
+        \end{figure}
+\par
+O fluxograma é separado em três modulos: \textbf{a}, \textbf{b} e \textbf{c}. O modulo \textbf{a} é onde é realizado o monitoramento da da sala, realizando leituras dos objetos que entram e saem da sala, no módulo \textbf{b} é o onde serão tomadas as decisões referente a etiqueta anexada ao objeto lida naquele momento, verificando se a etiqueta está ou não localizada naquela sala e processando as alterações necessárias. O módulo \textbf{c} é o último processo que atualiza as informações do servidor para que os dados consultados sejam iguais para todos.
 \section{Localização dos objetos}
 Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, ou seja, a partir do momento em que o leitor RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
 \par
