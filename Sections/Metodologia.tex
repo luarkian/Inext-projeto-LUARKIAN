@@ -26,7 +26,7 @@ O método proposto consiste basicamente nas seguintes etapas:
 \section{Identificação dos objetos rastreáveis}
 Antes de qualquer passo é necessário a identificação dos objetos, nessa etapa é anexadas ao objetos as etiquetas RFID e realizada uma descrição do objeto portador dessa etiqueta no sistema, para que ao entrar e sair das salas do edificio além de fornecer a localização do objeto também seja possível ter detalhes sobre aquele objeto, dessa forma se objeto tiver uma registro local isso irá consta na descrição do objeto. Essa etapa pode ser considerada como a fase de cadastro.
 
-\section{Monitoramento dos objetos rastreáveis}
+\section{Monitoramento e Localização dos objetos rastreáveis}
 O monitoramento é realizado pelos sensores RFID que estará em cada porta das salas do prédio e será responsável por enviar mensagens para o servidor sobre as ocorrências da sala para que medidas sejam realizadas.
 \subsection{Fluxo de execução do método em cada sala}
 Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado na \autoref{fig:fluxograma}, o fluxo exemplifica as tarefas que cada dispositivos executarão. Neste fluxograma os retangulos represetam processos e retangulos com bordas duplas processos pré-deinidos, os losangos represetam as tomadas de decisões, os icones com bordas curvas para o mesmo lado represeta operações nos dados do sistema e o icone com bordas curvas oposta represeta o inicio do fluxo.
@@ -38,10 +38,61 @@ Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado n
 \end{figure}
 \par
 O fluxograma é separado em três modulos: \textbf{a}, \textbf{b} e \textbf{c}. O modulo \textbf{a} é onde é realizado o monitoramento da da sala, realizando leituras dos objetos que entram e saem da sala, no módulo \textbf{b} é o onde serão tomadas as decisões referente a etiqueta anexada ao objeto lida naquele momento, verificando se a etiqueta está ou não localizada naquela sala e processando as alterações necessárias. O módulo \textbf{c} é o último processo que atualiza as informações do servidor para que os dados consultados sejam iguais para todos. 
-\section{Localização dos objetos}
+\subsection{Localização dos objetos}
 Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, ou seja, a partir do momento em que o leitor RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
 \par
 O sistema conterá um servidor que possui a função de tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, o papel do servidor é de grande importância também sendo utilizado para consultar informações referentes aos objetos.
 
-\section{Configuração do tempo para alertas}
+\section{Alertas}
+Para um melhor gerenciamento dos objetos, o sistema conta com alertas para que caso um objeto inicie uma transição para outra sala e nesse trajeto o objeto não entre em nenhuma sala excedendo um tempo determinado, um alerta é gerado informado que o objeto não entrou em nenhuma sala do edificio até o momento da geração do alerta.
+\par
+Um tempo padrão deve ser configurado para os alertas, se um objeto excede esse tempo na transição um alerta é gerado no servidor. O tempo deve ser configurado na implatação do sistema.
 
+\section{Conexão dos dispositivos de porta com o servidor}
+A comunicação entre os dispositivos da porta com o servidor acontecerá por meio de uma WLAN, ou seja todos estarão em uma rede local e assim poderrão se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor, não havendo comunicação entre dois dispositivos. O arduino nano contará com um módulo ESP8266, esse modulo possibilita a conexão com uma rede weriless 802.11 b/g/n.
+
+\section{Modelo de Prototipação}
+O protótipo é composto pelo servidor que nesse primeiro instante será um computador de propósito geral e pelo dispositivo da porta, que será um Arduino Nano ATmega168 junto ao leitor RFID RC522 e módulo ESP8266, o leitor pode ser visto na \autoref{fig:leitorRFID}, esse leitor é capaz de ler etiquetas que operam em frequências de 13,56 Mhz.
+\begin{figure}[H]
+              \caption{\label{fig:leitorRFID}{Leitor RFID RC522}}
+              \centering
+              \includegraphics[width=0.7\textwidth]{Figuras/rfid_rc522.PNG}
+              \legend{Fonte: Fritzing}
+\end{figure}
+
+\par
+O leitor RFID utiliza a interface SPI (\textit{Serial Peripheral Interface} ) para comunicação com o Arduino, essa conexão é síncrona e é realizada por meio dos pinos  9 à 13. A prototipagem entre o Arduino e o leitor RFID segue o seguinte esquema abaixo também podendo ser vista na \autoref{fig:esq_conexoes}:
+\begin{itemize}
+    \item 3.3V - conectado ao pino de 3.3v no Arduino, essa conexão faz a alimentação do leitor RFID;
+    \item RST - conectado ao pino 9 do Arduino;
+    \item GND - conectado ao pino GND do Arduino;
+    \item NC - não utiliazado;
+    \item MISO - conectado ao pino 12;
+    \item MOSI - conectado ao pino 11; 
+    \item SCK - conectado ao pino 13;
+    \item SDA - conecatado ao pino 10.
+\end{itemize}
+\begin{figure}[H]
+              \caption{\label{fig:moduloWii}{Módulo Wifi ESP8266}}
+              \centering
+              \includegraphics[width=0.6\textwidth]{Figuras/Modulo_ESP8266.png}
+              \legend{Fonte: Fritzing}
+\end{figure}
+\par
+O ESP8266 é um módulo que permite a conexão do Arduino com redes wireless 802.11 b/g/n, esse módulo pode trabalhar em dois modos tanto como ponto de acesso ou no modo STA, estação que envia e recebe dados. 
+\begin{itemize}
+    \item 3.3V - conectado ao pino de 3.3v no Arduino;
+    \item GND - conectado ao pino GND do Arduino;
+    \item GPIO0 - não conectado ;
+    \item GPIO2 - não conectado ; 
+    \item TX - conectado ao pino digital 2 no Arduino;
+    \item RX - conecatado ao pino digital 3 no Arduino junto com dois resistores um de 220$\Omega$ e outro de 330$\Omega$ para dividir a tensão;
+    \item RST - não conecatado ;
+    \item CH\_PD - conecatado ao pino 3.3v mas com resistor de 10 $K\Omega$.
+\end{itemize}
+\begin{figure}[H]
+              \caption{\label{fig:esq_conexoes}{Esquema de Conexões}}
+              \centering
+              \includegraphics[width=1\textwidth]{Figuras/esquema_de_conexoes2.PNG}
+              \legend{Fonte: Própria}
+\end{figure}
