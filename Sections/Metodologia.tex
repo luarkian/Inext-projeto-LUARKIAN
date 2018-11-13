@@ -5,7 +5,7 @@ Este Capítulo tem o objetivo de descrever a metodologia proposta neste trabalho
 \section{Visão geral do método}
 O método consiste em um sistema que localiza qualquer objeto que tenha uma etiqueta RFID passiva fixada em seu corpo, as etiquetas serão localizadas e identificadas a medida em que transitam de uma sala para outra em um edifício. A localização e identificação é feita por meio de leitores RFID e controladores colados próximos a porta e os leitores devem ler tags que passam pela porta.
 \par
-Cada leitor junto ao controlador será responsável por uma sala, portanto qualquer etiqueta lida por aquele leitor ocasionará nas ações referentes a mesma sala. As ações poderá ser de atualização sobre a localização do objeto ou informando que o objeto está em transição para outra sala no edifício.
+Cada leitor RFID junto ao controlador será responsável por uma sala, portanto qualquer etiqueta lida por aquele leitor ocasionará nas ações referentes a mesma sala. As ações poderá ser de atualização sobre a localização do objeto ou informando que o objeto está em transição para outra sala no edifício.
 \begin{figure}[H]
               \caption{\label{fig:modelo}{Modelo Proposto}}
               \centering
@@ -13,7 +13,7 @@ Cada leitor junto ao controlador será responsável por uma sala, portanto qualq
               \legend{Fonte: Própria}
         \end{figure}
 \par
-Na \autoref{fig:modelo} é possivel notar que há um dispositivo acoplado proximo a porta de cada sala, esse dispositivo cotém o leitor RFID, esse dispositvo será encarrecado de consultar um servidor para assim tomar decisões do que será feito com o status do objeto, cada objtetos possui uma tag RFID fixada nele e quando passar pela porta o leitor identifica o objeto e altera sua as informações sobre sua localização.
+Na \autoref{fig:modelo} é possível notar que há um dispositivo acoplado próximo a porta de cada sala, esse dispositivo cotém o leitor RFID, esse dispositvo será encarrecado de consultar um servidor para assim tomar decisões do que será feito com o status do objeto, cada objtetos possui uma tag RFID fixada nele e quando passar pela porta o leitor identifica o objeto e altera sua as informações sobre sua localização.
 
 \par
 O método proposto consiste basicamente nas seguintes etapas:
@@ -24,12 +24,12 @@ O método proposto consiste basicamente nas seguintes etapas:
     \item Configuração do tempo para alertas
 \end{enumerate}
 \section{Identificação dos objetos rastreáveis}
-Antes de qualquer passo é necessário a identificação dos objetos, nessa etapa é anexadas ao objetos as etiquetas RFID e realizada uma descrição do objeto portador dessa etiqueta no sistema, para que ao entrar e sair das salas do edificio além de fornecer a localização do objeto também seja possível ter detalhes sobre aquele objeto, dessa forma se objeto tiver uma registro local isso irá consta na descrição do objeto. Essa etapa pode ser considerada como a fase de cadastro.
+Antes de qualquer passo é necessário a identificação dos objetos, nessa etapa é anexadas ao objetos as etiquetas RFID e realizada uma descrição do objeto portador dessa etiqueta no sistema, para que ao entrar e sair das salas do edifício além de fornecer a localização do objeto também seja possível ter detalhes sobre aquele objeto, dessa forma se objeto tiver uma registro local isso irá constar na descrição do objeto. Essa etapa pode ser considerada como a fase de cadastro.
 
 \section{Monitoramento e Localização dos objetos rastreáveis}
 O monitoramento é realizado pelos sensores RFID que estará em cada porta das salas do prédio e será responsável por enviar mensagens para o servidor sobre as ocorrências da sala para que medidas sejam realizadas.
 \subsection{Fluxo de execução do método em cada sala}
-Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado na \autoref{fig:fluxograma}, o fluxo exemplifica as tarefas que cada dispositivos executarão. Neste fluxograma os retangulos represetam processos e retangulos com bordas duplas processos pré-deinidos, os losangos represetam as tomadas de decisões, os icones com bordas curvas para o mesmo lado represeta operações nos dados do sistema e o icone com bordas curvas oposta represeta o inicio do fluxo.
+Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado na \autoref{fig:fluxograma}, o fluxo exemplifica as tarefas que cada dispositivos executarão. Neste fluxograma os retangulos represetam processos e retângulos com bordas duplas processos pré-definidos, os losangos represetam as tomadas de decisões, os icones com bordas curvas para o mesmo lado representam operações nos dados do sistema e o ícone com bordas curvas opostas represetam o inicio do fluxo.
 \begin{figure}[H]
               \caption{\label{fig:fluxograma}{Fluxograma de cada sala}}
               \centering
@@ -37,7 +37,7 @@ Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado n
               \legend{Fonte: Própria}
 \end{figure}
 \par
-O fluxograma é separado em três modulos: \textbf{a}, \textbf{b} e \textbf{c}. O modulo \textbf{a} é onde é realizado o monitoramento da da sala, realizando leituras dos objetos que entram e saem da sala, no módulo \textbf{b} é o onde serão tomadas as decisões referente a etiqueta anexada ao objeto lida naquele momento, verificando se a etiqueta está ou não localizada naquela sala e processando as alterações necessárias. O módulo \textbf{c} é o último processo que atualiza as informações do servidor para que os dados consultados sejam iguais para todos. 
+O fluxograma é separado em três módulos: \textbf{a}, \textbf{b} e \textbf{c}. O modulo \textbf{a} é onde é realizado o monitoramento da da sala, realizando leituras dos objetos que entram e saem da sala, no módulo \textbf{b} é o onde serão tomadas as decisões referente a etiqueta anexada ao objeto lida naquele momento, verificando se a etiqueta está ou não localizada naquela sala e processando as alterações necessárias. O módulo \textbf{c} é o último processo que atualiza as informações do servidor para que os dados consultados sejam iguais para todos. 
 \subsection{Localização dos objetos}
 Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, ou seja, a partir do momento em que o leitor RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
 \par
@@ -49,7 +49,7 @@ Para um melhor gerenciamento dos objetos, o sistema conta com alertas para que c
 Um tempo padrão deve ser configurado para os alertas, se um objeto excede esse tempo na transição um alerta é gerado no servidor. O tempo deve ser configurado na implatação do sistema.
 
 \section{Conexão dos dispositivos de porta com o servidor}
-A comunicação entre os dispositivos da porta com o servidor acontecerá por meio de uma WLAN, ou seja todos estarão em uma rede local e assim poderrão se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor, não havendo comunicação entre dois dispositivos. O arduino nano contará com um módulo ESP8266, esse modulo possibilita a conexão com uma rede weriless 802.11 b/g/n.
+A comunicação entre os dispositivos da porta com o servidor acontecerá por meio de uma WLAN, ou seja todos estarão em uma rede local e assim poderrão se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor, não havendo comunicação entre dois dispositivos. O Arduino nano contará com um módulo ESP8266, esse módulo possibilita a conexão com uma rede weriless 802.11 b/g/n.
 
 \section{Modelo de Prototipação}
 O protótipo é composto pelo servidor que nesse primeiro instante será um computador de propósito geral e pelo dispositivo da porta, que será um Arduino Nano ATmega168 junto ao leitor RFID RC522 e módulo ESP8266, o leitor pode ser visto na \autoref{fig:leitorRFID}, esse leitor é capaz de ler etiquetas que operam em frequências de 13,56 Mhz.
