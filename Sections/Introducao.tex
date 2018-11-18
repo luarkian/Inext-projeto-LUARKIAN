@@ -2,39 +2,68 @@
 %===========================================================
 %INTRODUÇÃO
 %===========================================================
-As conexões entre computadores que chamavam de "redes de computadores" quando se referia a um conjunto de computadores autônomos interconectados \cite{tenenbaum2002}, esse conceito está absoleto pois não se tem apenas computadores conectados, mas diversos dispositivos que podem ser ou não semelhantes, podendo ser cameras, sensores, smartphones, ou qualquer objeto que possua um hardware com capacidade de conectividade \cite{iot2016SBRC}.
-\par
-Com os avanços tecnológios interações com objetos tornou-se cada vez mais frequênte, isso se deu a um paradigma que visa uma interligação de objetos em rede para interação e cooperação podendo mudar ou não a forma como as atividades rotineiras serão realizadas, esse modelo é chamado de \textit{Internet of Things (IoT)} \cite{realtimeRFID2016}.
-\par
-A IoT que também está relacionada com computação ubíqua é chamada de tecnologia do futuro, a comunicação de diferentes dispositivos, edificios ou qualquer equipamente que possua um microcontrolador ou microprocessador embutido e que podem se conectar a redes para assim ter uma comunicação com outros se encaixa nessa relação \cite{mechanismRFID2006}.
-\par
- A interligação dos objetos as redes possibilitou que o meio cientifico propursessem várias maneiras de localização em ambientes confinados, visto que o GPS não funciona tão bem em tais ambientes \cite{mechanismRFID2006}, e a utilização de leitores e tags RFID ganhou grande foco já que além de localizar possibilita a identiicação.
+As\todo{Adicionar um texto motivador para abordar o assunto} conexões entre computadores que chamavam de 
+"redes de computadores" quando se referia a um conjunto de computadores autônomos interconectados \cite{tenenbaum2002}, 
+esse conceito está absoleto pois não se tem apenas computadores conectados, mas diversos dispositivos que podem ser ou 
+não semelhantes, podendo ser cameras, sensores, \textit{smartphones}, ou qualquer objeto que possua um 
+hardware com capacidade de conectividade \cite{iot2016SBRC}.
+
+
+Com os avanços tecnológios interações com objetos tornou-se cada vez mais frequênte, isso se deu a um paradigma 
+que visa uma interligação de objetos em rede para interação e cooperação podendo mudar ou não a forma como as atividades 
+rotineiras serão realizadas, esse modelo é chamado de \textit{Internet of Things (IoT)} \cite{realtimeRFID2016}.
+
+
+A IoT que também está relacionada com computação ubíqua é chamada de tecnologia do futuro, a comunicação de diferentes dispositivos, 
+edificios ou qualquer equipamente que possua um microcontrolador ou microprocessador embutido e que podem se conectar a 
+redes para assim ter uma comunicação com outros se encaixa nessa relação \cite{mechanismRFID2006}\todo{Apresentar um exemplo prático e real, tipo smart city e outros}.
+
+
+A interligação dos objetos as redes possibilitou que o meio cientifico propursessem várias maneiras de localização em ambientes 
+confinados, visto que o GPS não funciona tão bem em tais ambientes \cite{mechanismRFID2006}, e a utilização de leitores e tags RFID 
+ganhou grande foco já que além de localizar possibilita a identificação\todo{Descrever outras soluções além do RFID e pq a escolha do RFID}.
+
+
 % %===========================================================
 % %MOTIVAÇÃO
 % %===========================================================
  \section{Motivação}
-A dificuldade de localizar objetos em ambientes confinados ou fechados, cria uma necessidade de novas ferramentas para tal aplicação sendo que o GPS não se aplica a tal problema ou encontra dificuldade para funcionar de maneira correta. Contudo o motivo desta pesquisa é trabalhar uma ferramenta que possa auxiliar ou ter o papel de localizar objetos em ambientes em que não é possível fazer uso de GPS, ou seja, localizar objetos em ambientes fechados ou confinados \cite{mechanismRFID2006}.
+A dificuldade de localizar objetos em ambientes confinados ou fechados, cria uma necessidade de novas ferramentas para 
+tal aplicação sendo que o GPS não se aplica a tal problema ou encontra dificuldade para funcionar de maneira correta, exemplo, 
+localização de carros em tuneis. Contudo, o motivo desta pesquisa é auxiliar na localização de objetos permanentes (como computadores e moveis) 
+em ambientes em que não é possível fazer uso de GPS\todo{Tem melhorar isso, visto que o GPS ainda funciona dentro de um predio, no nosso caso nos blocos}, 
+ou seja, localizar objetos em ambientes fechados ou confinados \cite{mechanismRFID2006}.
 
 %Porque GPS não se aplica em ambientes fechados
 \par
-Os edifícios e construções dificultam o envio de sinais de rádio emitidos pelos satélites e dispositivos que fazem uso do GPS, por essa questão sua utilização torna-se inviável para aplicações que consistem em localizar objetos em ambientes fechados, além que o tempo-de-luz transitório fica difícil e caro para fazer sua medição \cite{rfid2009review}.
+Os edifícios e construções dificultam o envio de sinais de rádio emitidos pelos satélites e dispositivos que fazem uso do GPS, 
+por essa questão sua utilização torna-se inviável para aplicações que consistem em localizar objetos em ambientes fechados, 
+além que o tempo-de-luz transitório fica difícil e caro para fazer sua medição \cite{rfid2009review}\todo{Falta falar qual o papel do RFID.}.
 
 %===========================================================
 %DEFINIÇÃO DO PROBLEMA
 %===========================================================
 \section{Definição do Problema}
 
-Localizar e identificar objetos em certos ambientes têm grande importância quando se quer gerenciar e controlar ativos, por exemplo em comércios, indústrias ou instituições de ensino que possuem uma gama de bens que podem ser movimentados dentro do local,  poder identificar o objeto que está sendo movido e saber em que local o objeto está, é de grande importância para ter um maior controle sobre os bens \cite{realtimeRFID2016}. 
+Localizar e identificar objetos em certos ambientes têm grande importância quando se quer gerenciar e controlar ativos, 
+por exemplo em comércios, indústrias ou instituições de ensino que possuem uma gama de bens que podem ser movimentados dentro do local, 
+poder identificar o objeto que está sendo movido e saber em que local o objeto está, é de grande importância para ter um maior 
+controle sobre os bens \cite{realtimeRFID2016}. 
 
 \par
-O problema considerado neste trabalho é expresso na seguinte questão: \textbf{ Como utilizar RFID para identificar e localizar bens em ambientes confinados ou fechados, para gerenciar e controlar em tempo real?}
+O problema considerado neste trabalho é expresso na seguinte questão\todo{Ainda podemos mehorar}: 
+\textbf{Como projetar um sistema computacional capaz de localizar e identificar objetos em tempo real, em ambientes confinados ou fechados,  
+por meio da utilização de radio frequência?}
+
 %===========================================================
 %OBJETIVOS GERAIS E ESPECIFICOS
 %===========================================================
 \section{Objetivos}
-O objetivo principal deste trabalho é analisar as técnicas existentes, se possível utilizar alguma técnica, e assim propor um método de localização e identificação indoor para objetos utilizando tags RFID passivas.
-\par
-Objetivos específicos:
+O objetivo principal deste trabalho é projetar e desenvolver um sistema computacional autonomo para o gerenciamento de objetos com RFID 
+em ambientes confinados ou fechados, utilizando técnicas de localização e identificação de redes IoT.
+
+
+Objetivos específicos\todo{Estes objetivos nao estão bons, tem que melhorar}:
 \begin{enumerate}
 
     \item Localizar objetos em ambientes confinados utilizando tags RFID.
@@ -81,4 +110,4 @@ No \autoref{chapter:metodo} \textbf{Método Proposto}, é descrito as etapas de 
 \par
 %No \autoref{chapter:resultados} \textbf{Resultados Experimentais}, descreve-se a execução de uma avaliação experimental 
 \par
-E por fim no \autoref{chapter:consideracoes} \textbf{Considerações parciais e trabalhos futuros}, será apresentado as considerações parciais e trabalhos futuros.
+E\todo{Ajustar a númeração e seria bom ter um seção com resultados parciais apresentado um exemplo com RFID} por fim no \autoref{chapter:consideracoes} \textbf{Considerações parciais e trabalhos futuros}, será apresentado as considerações parciais e trabalhos futuros.
