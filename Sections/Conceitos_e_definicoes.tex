@@ -1,8 +1,10 @@
 \label{chapter:conceitos}
-O principal objetivo desse capítulo é apresentar conceitos necessários para o entendimento deste trabalho, de forma clara e direta. Os assuntos abordados neste capítulo são: Comunicação sem fio, Localização e Algoritmos de localização RFID.
+O principal objetivo desse capítulo é apresentar conceitos necessários para o entendimento deste trabalho. 
+Os assuntos abordados neste capítulo são: Comunicação sem fio, Localização, e Algoritmos de localização RFID\todo{Atualizar}.
+
 \section{Sistemas Embarcados}
-    \par
-    Segundo \citeauthor{rodrigo2016} sistemas embarcados estão presente em quase todos os ambientes, tais sistemas possuem uma única função específica e que não pode ser alterada. Eles são controlados por microprocessadores ou microcontroladores de forma que possuem muitas restrições em relação a recursos computacionais.
+
+Segundo \citeauthor{rodrigo2016} sistemas embarcados estão presente em quase todos os ambientes, tais sistemas possuem uma única função específica e que não pode ser alterada. Eles são controlados por microprocessadores ou microcontroladores de forma que possuem muitas restrições em relação a recursos computacionais.
 
     \par
     Atualmente é possível encontrar sistemas embarcados em diversos dispositivos, por exemplo: televisores, micro-ondas, sistemas de gerenciamento de aviação, esteiras, etc. Os dispositivos que fazem uso de eletricidade para seu funcionamento, basicamente possuem um sistema embarcado para articular o seu funcionamento \cite{rodrigo2016}.
@@ -16,17 +18,21 @@ O principal objetivo desse capítulo é apresentar conceitos necessários para o
               \legend{Fonte: \cite{Li:2003:RCE:829584}}
             \end{figure}
     \par
-    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}.
+    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}\todo{Falta fazer um link com IoT}.
     % microcontroladores e microprocessadores
     
     % Sistemas de tempo real e tolerancia a falha
+
+    \todo[inline]{Falar um pouco com exemplos sobre microcontroladores como o arduino e como estes conceitos serão usados no seu tCC}
     
 
     \subsection{IoT}
     \par
     A possibilidade de comunicação entre objetos de uso cotidiano do ambiente real com a internet referência o termo IoT, quando um objeto está conectado a rede de computadores e passa a transmitir informações de seu funcionamento ou estado, tal objeto passa a ser denominado de objeto inteligente \cite{iot2016}.
     \par
-    De acordo com \citeauthor{iot2017}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o desenvolvimento de uma infinidades de padrões e protocolos para a integração de WSN tornaram IoT uma realidade.
+    De acordo com \citeonline{iot2017}\todo{corrigir}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se 
+    pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o 
+    desenvolvimento de uma infinidades de padrões e protocolos para a integração de WSN\todo{descrever} tornaram IoT uma realidade.
     \begin{figure}[H]
               \caption{\label{fig:iot}{Internet of Things.}}
               \centering
@@ -34,14 +40,21 @@ O principal objetivo desse capítulo é apresentar conceitos necessários para o
               \legend{Fonte: \cite{imgIot}}
         \end{figure}
     \par
-    A \autoref{fig:iot} representa bem o cenário que IoT proporciona, na imagem é possível notar que todos os objetos estão conectado por uma espécie de cabo azul, mas isso é so uma representação, essa conexão também pode ser através de conectividade sem fio. Ainda sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas pelos objetos para o usuário.
+
+    A \autoref{fig:iot} representa bem o cenário que IoT proporciona, na imagem é possível notar que todos os objetos estão conectado por 
+    uma espécie de cabo azul, mas isso é so uma representação, essa conexão também pode ser através de conectividade sem fio. Ainda 
+    sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas 
+    pelos objetos para o usuário.
+
+    \todo[inline]{Apresentar um exemplo real}
     % relação de iot com sistemas embarcados
     
 \section{Comunicação Sem Fio}
     \par
     A medida que os elétrons se movimentam ondas eletromagnéticas são criada no espaço, essas ondas são medidas de acordo com suas oscilações e chamadas de frequência (Hertz), o comprimento dessa onda é medido pela distância de dois pontos máximos ou dois pontos minímos seguidos \cite{tenenbaum2002}.
     \par
-    Segundo \citeauthor{tenenbaum2002} ao colocar uma antena em um circuito elétrico apropriado pode-se  transmistir e receber ondas eletromagnéticas, a comunição sem fio é baseada nisso.
+    Segundo \citeauthor{tenenbaum2002} ao colocar uma antena em um circuito elétrico apropriado pode-se  transmistir e receber ondas 
+    eletromagnéticas, a comunição sem fio é baseada nisso.
     
     \subsection{Transmissão por rádio}
         % o que é 
