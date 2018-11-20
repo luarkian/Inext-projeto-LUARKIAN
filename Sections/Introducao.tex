@@ -16,12 +16,23 @@ rotineiras serão realizadas, esse modelo é chamado de \textit{Internet of Thin
 
 A IoT que também está relacionada com computação ubíqua é chamada de tecnologia do futuro, a comunicação de diferentes dispositivos, 
 edificios ou qualquer equipamente que possua um microcontrolador ou microprocessador embutido e que podem se conectar a 
-redes para assim ter uma comunicação com outros se encaixa nessa relação \cite{mechanismRFID2006}\todo{Apresentar um exemplo prático e real, tipo smart city e outros}.
+redes para assim ter uma comunicação com outros se encaixa nessa relação \cite{mechanismRFID2006}\todo[color=green]{Apresentar um exemplo prático e real, tipo smart city e outros}.
 
 
-A interligação dos objetos as redes possibilitou que o meio cientifico propursessem várias maneiras de localização em ambientes 
-confinados, visto que o GPS não funciona tão bem em tais ambientes \cite{mechanismRFID2006}, e a utilização de leitores e tags RFID 
-ganhou grande foco já que além de localizar possibilita a identificação\todo{Descrever outras soluções além do RFID e pq a escolha do RFID}.
+No trabalho de \citeauthor{IotMartins} é realizado uma abordagem para \textit{smart cities}, que são aplicações que visam a troca de inormações entre veículos, \textit{smartphones}, semáforos e qualquer outro dispositivo capaz de enviar e receber dados, com a troca de dados entre os dispositivos pretende-se ter um melhor fluxo de carros em uma cidade, gerenciamento de desperdicios e monitoramento de qualidade de vida na cidade. 
+
+
+\citeauthor{landmarc} apresenta um sistema de localização RFID, que foi aplicado para facilitar a gestão de hospitais e outras organizações, para melhorar os seviços, economizar custos e reduzirem os riscos. O sistema também era utilizado para monitorar pacientes infcciosos e garantir resposta no tempo adequado para emergências.
+
+
+A interligação dos objetos as redes possibilitou que o meio científico propursessem várias maneiras de localização em ambientes 
+confinados, visto que o GPS não funciona tão bem para a solução proposta, tendo em vista que um edifício possui muitas salas ou/e andares, e com o GPS não seria possível saber em qual sala por não ter uma planta baixa do prédio ou informar qual o andar o objeto se encontra pois o GPS retornaria para a aplicação as coordenadas de latitude e longitude \cite{rfid2009review}.
+
+
+Para solucionar essa incapacidade de localização do GPS, inúmeas aplicações foram propostas para a localização indoor.  Aplicações que utilizam tecnologia infravermelho difuso para estimar a posição, sistemas que utilizam adaptadores de rede padrão IEEE 802.11 para rastrear os objetos no interior do prédio, sistemas baseados na tecnologia ultra-sônica e tambem sistemas que utilizam RFID para rastreio indoor foram propostos \cite{mechanismRFID2006}. 
+
+
+O RFID foi a tecnologia escolhida por proporcinar a utilização de etiquetas que não necessitam de uma fonte de alimentação para seu funcionamento, pois são alimentadas pelas ondas eletromagnéticas emitidas pela antena do leitor, sendo que isso não é possivel em outras tecnologias. Uma outra funcionalidade do RFID é a possibilidade de identificação das etiquetas que possui uma ID única\todo[color=green]{Descrever outras soluções além do RFID e pq a escolha do RFID}.
 
 
 % %===========================================================
@@ -51,9 +62,8 @@ poder identificar o objeto que está sendo movido e saber em que local o objeto 
 controle sobre os bens \cite{realtimeRFID2016}. 
 
 \par
-O problema considerado neste trabalho é expresso na seguinte questão\todo{Ainda podemos mehorar}: 
-\textbf{Como projetar um sistema computacional capaz de localizar e identificar objetos em tempo real, em ambientes confinados ou fechados,  
-por meio da utilização de radio frequência?}
+O problema considerado neste trabalho é expresso na seguinte questão\todo[color=green]{Ainda podemos mehorar}: 
+\textbf{Como projetar um sistema computacional capaz de localizar e identificar objetos em tempo real com baixo custo, em ambientes confinados ou fechados, garantindo confiabilidade na informações fornecidade e auxiliando usuários no gerenciamento de bens por meio da utilização de radio frequência?}
 
 %===========================================================
 %OBJETIVOS GERAIS E ESPECIFICOS
@@ -106,7 +116,7 @@ As contribuições propostas deste trabalho são:
 A introdução deste trabalho apresentou: o contexto, definição do problema, objetivos, metodologia e contribuições dessa pesquisa. Os capítulos restantes são organizados da seguinte forma:
 
 \par
-No \autoref{chapter:conceitos} \textbf{Conceitos e Definições}, são apresentados fundamentos teóricos que abordam os seguintes assuntos: sistemas embarcados, localização de objetos, algoritmos utilizados em localização, modelagem e prototipação de sistemas.
+No \autoref{chapter:conceitos} \textbf{Conceitos e Definições}, são apresentados fundamentos teóricos que abordam os seguintes assuntos: sistemas embarcados, localização de objetos, algoritmos utilizados em localização e modelagem.
 
 \par
 No \autoref{chapter:correlatos} \textbf{Trabalhos Correlatos}, são apresentados trabalhos correlatos a utilização de RFID e localização.
