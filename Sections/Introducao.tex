@@ -38,29 +38,36 @@ O RFID foi a tecnologia escolhida por proporcinar a utilização de etiquetas qu
 % %===========================================================
 % %MOTIVAÇÃO
 % %===========================================================
- \section{Motivação}
-A dificuldade de localizar objetos em ambientes confinados ou fechados, cria uma necessidade de novas ferramentas para 
-tal aplicação sendo que o GPS não se aplica a tal problema ou encontra dificuldade para funcionar de maneira correta, exemplo, 
-localização de carros em tuneis. Contudo, o motivo desta pesquisa é auxiliar na localização de objetos permanentes (como computadores e moveis) 
-em ambientes em que não é possível fazer uso de GPS\todo{Tem melhorar isso, visto que o GPS ainda funciona dentro de um predio, no nosso caso nos blocos}, 
-ou seja, localizar objetos em ambientes fechados ou confinados \cite{mechanismRFID2006}.
-
-%Porque GPS não se aplica em ambientes fechados
-\par
-Os edifícios e construções dificultam o envio de sinais de rádio emitidos pelos satélites e dispositivos que fazem uso do GPS, 
-por essa questão sua utilização torna-se inviável para aplicações que consistem em localizar objetos em ambientes fechados, 
-além que o tempo-de-luz transitório fica difícil e caro para fazer sua medição \cite{rfid2009review}\todo{Falta falar qual o papel do RFID.}.
 
 %===========================================================
 %DEFINIÇÃO DO PROBLEMA
 %===========================================================
 \section{Definição do Problema}
+A dificuldade de localizar objetos em ambientes confinados ou fechados, cria uma necessidade de novas ferramentas para 
+tal aplicação sendo que o GPS não se aplica a tal problema por na localização do GPS os prédios são apresentados como um edifício sem salas e divisórias, sem contar o custo beneficio para anexar módulos de GPS aos objetos, isso iria deixar o protótipo caro. Contudo, o motivo desta pesquisa é auxiliar na localização de objetos permanentes (como computadores e moveis) 
+em ambientes de uma forma que não tenha o custo elevado quanto a utiliação do GPS\todo[color=green]{Tem melhorar isso, visto que o GPS ainda funciona dentro de um predio, no nosso caso nos blocos}.\cite{mechanismRFID2006}.
+
+\par
+\begin{comment}
+Os edifícios e construções dificultam o envio de sinais de rádio emitidos pelos satélites e dispositivos que fazem uso do GPS, 
+por essa questão sua utilização torna-se inviável para aplicações que consistem em localizar objetos em ambientes fechados, 
+além que o tempo-de-luz transitório fica difícil e caro para fazer sua medição \cite{rfid2009review}.
+\end{comment}
+
+%dependendo da forma que os dados são armazedados e recuperados possibilita a identificação automatica utilizando tags e leitores, 
 
 Localizar e identificar objetos em certos ambientes têm grande importância quando se quer gerenciar e controlar ativos, 
 por exemplo em comércios, indústrias ou instituições de ensino que possuem uma gama de bens que podem ser movimentados dentro do local, 
 poder identificar o objeto que está sendo movido e saber em que local o objeto está, é de grande importância para ter um maior 
 controle sobre os bens \cite{realtimeRFID2016}. 
 
+\todo[color=green]{Falta falar qual o papel do RFID.}
+A tecnologia RFID é um meio de comunicação sem fio que utiliza compo eletromagnéticos de radiofrequencia para identificar etiquetas. As etiquetas podem ser passivas, ativas e semi-passivas. As etiquetas semi-ativa e ativas possuem uma fonte de alimentação, a semi-ativa só emite sinais quando entra em contato com o leitor, já ativa emite os sinais a todo momento, as etiquetas passivas não possuem fonte de alimentação entrando em funcionanmento apenas quando as ondas eletromagnéticas emitidas pelo leitor os alimentam\cite{realtimeRFID2016}. As funcionalidade da tecnoliga RFID fez com que muitas técnicas de localização fossem propostas.
+
+\begin{comment}
+\par
+Muitas técnicas de localização baseadas em RFID foram propostas, sendo com foco em objetos móveis ou estacionários, contudo algumas dessas técnicas fazem uso de etiquetas ativas a fim de obter melhores estimativas,
+\end{comment}
 \par
 O problema considerado neste trabalho é expresso na seguinte questão\todo[color=green]{Ainda podemos mehorar}: 
 \textbf{Como projetar um sistema computacional capaz de localizar e identificar objetos em tempo real com baixo custo, em ambientes confinados ou fechados, garantindo confiabilidade na informações fornecidade e auxiliando usuários no gerenciamento de bens por meio da utilização de radio frequência?}
