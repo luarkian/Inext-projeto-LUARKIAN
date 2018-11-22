@@ -19,28 +19,40 @@ Segundo \citeauthor{rodrigo2016} sistemas embarcados estão presente em quase to
               \legend{Fonte: \cite{Li:2003:RCE:829584}}
             \end{figure}
     \par
-    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}\todo{Falta fazer um link com IoT}.
+    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}\todo[color=green]{Falta fazer um link com IoT}.
     
     \par
     % microcontroladores e microprocessadores
     Os microcontroladores e microprocessadores são dispositivos fundamentais nos sistemas embarcados, porém eles possuem algumas diferenças , entre as principais delas é que o microcontroladores já possuem todos os componentes necessários para seu funcionamento diferente dos microprocessadores que necessitam de outros componentes e perifércios para funcionar por exemplo memória, dispositivos de entrade/saída, conversores de sinais \cite{ayala:1991}.  
-    % Sistemas de tempo real e tolerancia a falha
+    
+    \par
+    Um exemplo de microcontrolador seria o ATmega328P, que pode ser encontrado no Arduíno Nano, esse microcontrolador conta com 32 Kilobytes para a gravação de programas, 2 Kilobytes de SRAM (\textit{Static Random Access Memory}, Memoria de acesso aleatório estático), 1 Kilobyte de EEPROM ( \textit{Electrically-Erasable Programmable Read-Only Memory}, Memória somente leitura programável apagável eletricamente) e 2 Kilobytes para o carregador de inicialização, ATmega328P pode ser visualizado na \autoref{fig:ATmega} \cite{arduino}. 
 
-    \todo[inline]{Falar um pouco com exemplos sobre microcontroladores como o arduino e como estes conceitos serão usados no seu tCC}
-    \begin{figure}[h!]
-              \caption{\label{fig:sistemas embarcados}{Arduino Nano}}
+    \todo[inline,color=green]{Falar um pouco com exemplos sobre microcontroladores como o arduino e como estes conceitos serão usados no seu tCC}
+   \begin{figure}[h!]
+              \caption{\label{fig:ATmega}{Microcontrolador ATmega328P}}
               \centering
-              \includegraphics[width=0.8\textwidth]{Figuras/arduino_nano.png}
+              \includegraphics[width=0.8\textwidth]{Figuras/atmega.PNG}
               \legend{Fonte: \cite{arduino}}
-            \end{figure}
-
+    \end{figure}
+    \begin{figure}[h!]
+              \caption{\label{fig:arduino nano}{Arduíno Nano}}
+              \centering
+              \includegraphics[width=0.5\textwidth]{Figuras/arduino_nano.png}
+              \legend{Fonte: \cite{arduino}}
+    \end{figure}
+    \par
+    O Arduíno é uma popular ferramenta para desenvolvimento de aplicações IoT (\textit{Internet of things}, Internet das coisas), também sendo utilizado para ensino e seu hardware é \textit{Open Source} possibilitando que a comunidade contribua com tutoriais e suporte. O Arduíno Nano é mostrado na \autoref{fig:arduino nano}, é uma placa difundida e designers, engenheiros, estudantes, desenvolvedores e fabricantes de todo o mundo estão usando o Arduíno para inovar \cite{arduino}.
+    
+%  
     \subsection{IoT}
     \par
     A possibilidade de comunicação entre objetos de uso cotidiano do ambiente real com a internet referência o termo IoT, quando um objeto está conectado a rede de computadores e passa a transmitir informações de seu funcionamento ou estado, tal objeto passa a ser denominado de objeto inteligente \cite{iot2016}.
-    \par
-    De acordo com \citeauthor{iot2017}\todo{corrigir}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se 
+    \par 
+        % Esse balão "corrigir" não entendi muito bem o erro era so a forma da citação ou texto ?
+    De acordo com \citeauthor{iot2017}\todo[color=green]{corrigir}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se 
     pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o 
-    desenvolvimento de uma infinidades de padrões e protocolos para a integração de WSN\todo{descrever} tornaram IoT uma realidade.
+    desenvolvimento de uma infinidades de padrões e protocolos para a integração de WSN (\textit{Wireless sensor network}, rede de sensores sem fio) \todo[color=green]{descrever} tornaram IoT uma realidade.
     \begin{figure}[H]
               \caption{\label{fig:iot}{Internet of Things.}}
               \centering
@@ -54,8 +66,8 @@ Segundo \citeauthor{rodrigo2016} sistemas embarcados estão presente em quase to
     sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas 
     pelos objetos para o usuário.
 
-    \todo[inline]{Apresentar um exemplo real}
-    % relação de iot com sistemas embarcados
+    \todo[inline, color=green]{Apresentar um exemplo real}
+    \citeauthor{homesmart} em seu trabalho, onde ele propõe um sistema \textit{smart home} que contém os serviços de automação residencial controlando ar-condicionados, umidificadores, filtros de ar e movimentos das cortinas baseados nas informações do clima, segurança domestica para previnir explosões e acidentes e o último serviço é o gerenciamento através da internet. Muitas aplicações vem sendo desenvolvidas para o conforto, segurança ou monitaramento partindo dos conceitos de IoT.
     
 \section{Comunicação Sem Fio}
     \par
