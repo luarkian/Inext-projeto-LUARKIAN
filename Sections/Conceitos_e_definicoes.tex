@@ -1,7 +1,7 @@
 \label{chapter:conceitos}
 O principal objetivo desse capítulo é apresentar conceitos necessários para o entendimento deste trabalho. 
-Os assuntos abordados neste capítulo são:  sistemas embarcados, localização de objetos, algoritmos utilizados
-em localização, modelagem\todo[color=green]{Atualizar}.%Comunicação sem fio, Localização, e Algoritmos de localização RFID
+Os assuntos abordados neste capítulo são:  
+sistemas embarcados, sistemas de comunicação e localização, algoritmos utilizados em localização, e modelagem.
 
 \section{Sistemas Embarcados}
 
@@ -19,16 +19,17 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
               \legend{Fonte: \cite{Li:2003:RCE:829584}}
             \end{figure}
     \par
-    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}\todo[color=green]{Falta fazer um link com IoT}.
+    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração 
+    de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}.
     
     \par
     % microcontroladores e microprocessadores
-    Os microcontroladores e microprocessadores são dispositivos fundamentais nos sistemas embarcados, porém eles possuem algumas diferenças , entre as principais delas é que o microcontroladores já possuem todos os componentes necessários para seu funcionamento diferente dos microprocessadores que necessitam de outros componentes e perifércios para funcionar por exemplo memória, dispositivos de entrade/saída, conversores de sinais \cite{ayala:1991}.  
+    Os microcontroladores e microprocessadores são dispositivos fundamentais nos sistemas embarcados, porém eles possuem algumas diferenças, 
+    entre as principais delas é que o microcontroladores já possuem todos os componentes necessários para seu funcionamento diferente dos microprocessadores que necessitam de outros componentes e perifércios para funcionar por exemplo memória, dispositivos de entrade/saída, conversores de sinais \cite{ayala:1991}.  
     
     \par
     Um exemplo de microcontrolador seria o ATmega328P, que pode ser encontrado no Arduíno Nano, esse microcontrolador conta com 32 Kilobytes para a gravação de programas, 2 Kilobytes de SRAM (\textit{Static Random Access Memory}, Memoria de acesso aleatório estático), 1 Kilobyte de EEPROM ( \textit{Electrically-Erasable Programmable Read-Only Memory}, Memória somente leitura programável apagável eletricamente) e 2 Kilobytes para o carregador de inicialização, ATmega328P pode ser visualizado na \autoref{fig:ATmega} \cite{arduino}. 
 
-    \todo[inline,color=green]{Falar um pouco com exemplos sobre microcontroladores como o arduino e como estes conceitos serão usados no seu tCC}
    \begin{figure}[h!]
               \caption{\label{fig:ATmega}{Microcontrolador ATmega328P}}
               \centering
@@ -50,13 +51,14 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
     A possibilidade de comunicação entre objetos de uso cotidiano do ambiente real com a internet referência o termo IoT, quando um objeto está conectado a rede de computadores e passa a transmitir informações de seu funcionamento ou estado, tal objeto passa a ser denominado de objeto inteligente \cite{iot2016}.
     \par 
         % Esse balão "corrigir" não entendi muito bem o erro era so a forma da citação ou texto ?
-    De acordo com \citeonline{iot2017}\todo[color=green]{corrigir}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se 
+    De acordo com \citeonline{iot2017}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se 
     pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o 
-    desenvolvimento de uma infinidades de padrões e protocolos para a integração de WSN (\textit{Wireless sensor network}, rede de sensores sem fio) \todo[color=green]{descrever} tornaram IoT uma realidade.
+    desenvolvimento de uma infinidades de padrões e protocolos para a integração de 
+    WSN (\textit{Wireless sensor network}, rede de sensores sem fio) tornaram IoT uma realidade.
     \begin{figure}[H]
               \caption{\label{fig:iot}{Internet of Things.}}
               \centering
-              \includegraphics[width=0.7\textwidth]{Figuras/iot.png}
+              \includegraphics[width=0.5\textwidth]{Figuras/iot.png}
               \legend{Fonte: \cite{imgIot}}
         \end{figure}
     \par
@@ -66,13 +68,12 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
     sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas 
     pelos objetos para o usuário.
 
-    \todo[inline, color=green]{Apresentar um exemplo real}
     \citeonline{homesmart} em seu trabalho, onde ele propõe um sistema \textit{smart home} que contém os serviços de automação residencial controlando ar-condicionados, umidificadores, filtros de ar e movimentos das cortinas baseados nas informações do clima, segurança domestica para previnir explosões e acidentes e o último serviço é o gerenciamento através da internet é um exemplo real de que os conceitos de IoT vem sendo estudados e implementados no dia-a-dia. Muitas aplicações vem sendo desenvolvidas para o conforto, segurança ou monitaramento partindo dos conceitos de IoT.
     
 \section{Comunicação Sem Fio}
     \par
     A medida que os elétrons se movimentam ondas eletromagnéticas são criada no espaço, essas ondas são medidas de acordo com suas oscilações e chamadas de frequência (Hertz), o comprimento dessa onda é medido pela distância de dois pontos máximos ou dois pontos minímos seguidos \cite{tenenbaum2002}.
-    \par
+    %\par
     Segundo \citeonline{tenenbaum2002} ao colocar uma antena em um circuito elétrico apropriado pode-se  transmistir e receber ondas 
     eletromagnéticas, a comunição sem fio é baseada nisso.
     
@@ -88,7 +89,7 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
             \begin{figure}[H]
               \caption{\label{fig:nao_direciona}{Transmissão não-direcional.}}
               \centering
-              \includegraphics[width=0.5\textwidth]{Figuras/transmissao_radio_nao_direcional.PNG}
+              \includegraphics[width=0.3\textwidth]{Figuras/transmissao_radio_nao_direcional.PNG}
               \legend{Fonte: \cite{torres2001}}
             \end{figure}
         \par
@@ -100,7 +101,7 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
         \begin{figure}[H]
               \caption{\label{fig:direcional}{Transmissão direcional.}}
               \centering
-              \includegraphics[width=0.5\textwidth]{Figuras/transmissao_radio_direcional.PNG}
+              \includegraphics[width=0.3\textwidth]{Figuras/transmissao_radio_direcional.PNG}
               \legend{Fonte: \cite{torres2001}}
         \end{figure}
         \par
@@ -118,7 +119,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
    \begin{figure}[H]
               \caption{\label{fig:satelites}{Constelação de Satélites.}}
               \centering
-              \includegraphics[width=0.8\textwidth]{Figuras/gps_satelites.PNG}
+              \includegraphics[width=0.5\textwidth]{Figuras/gps_satelites.PNG}
               \legend{Fonte: \cite{gpsEduardo2005}}
         \end{figure}
         \par
@@ -131,7 +132,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
     \par
     Entre as inúmeras maneiras de localizar dispositivos em ambientes fechados utilizando WLANs, algumas são: 
     \begin{itemize}
-        \item {Triangulação}
+        \item {Triangulação:}
         \par
         Essa forma de localizar faz uso de AOA, que seria computação dos ângulos a múltiplos ponto de acesso, o resultado disso é uma interceptação que resulta na provável localização, isso pode ser visto na \autoref{fig:triangulacao} \cite{wifiFernandes}. 
            \begin{figure}[H]
@@ -146,13 +147,13 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
         \begin{figure}[H]
               \caption{\label{fig:trilateracao}{Trilateração.}}
               \centering
-              \includegraphics[width=0.5\textwidth]{Figuras/trilateracao.PNG}
+              \includegraphics[width=0.3\textwidth]{Figuras/trilateracao.PNG}
               \legend{Fonte: \cite{wifiFernandes}}
         \end{figure}
        \par
         Na \autoref{fig:trilateracao} é mostrado que há uma a comunicação entre os pontos de acesso para assim poder efetuar os cálculos, esses cálculos são uma forma de saber a TDOA para assim estimar a posição do objeto \cite{wifiFernandes}.
         
-        \item {Reconhecimento de padrões }
+        \item {Reconhecimento de padrões:}
         \par
         O RSS é o principal requisito dessa técnica, em que é feita medições prévias para fazer uma comparação com os dados do banco de dados. Inicialmente é necessário uma fase em que é feita a calibração para se obter o mapa de assinatura \cite{wifiFernandes}.
         
@@ -161,7 +162,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
          \begin{figure}[H]
               \caption{\label{fig:fingerprinting}{Reconhecimento de padrões.}}
               \centering
-              \includegraphics[width=1.0\textwidth]{Figuras/fingerprinting.PNG}
+              \includegraphics[width=0.7\textwidth]{Figuras/fingerprinting.PNG}
               \legend{Fonte: \cite{wifiFernandes}}
         \end{figure}
     \end{itemize}
@@ -197,24 +198,36 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \subsection{Multilateração}
     A multilaterção estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de refrência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências, é um método utilizado para suprir a trilaterção. A inserção de mais nós tem por finalidade aumentar a precisão e diminuir a região de incerteza \cite{rfid2009review}.
     \par
-    Segundo \citeonline{rfid2009review} os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão repesentado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas ja conhecidas $( x_k, y_k )$, $T$ representando o nó alvo com coordenadas desconhecidas $(x,y)$, podemos estimar utilizando a fórmula da distância da geometria analítica
+    Segundo \citeonline{rfid2009review} os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão 
+    repesentado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas ja conhecidas $( x_k, y_k )$, $T$ representando 
+    o nó alvo com coordenadas desconhecidas $(x,y)$, podemos estimar utilizando a fórmula da distância da geometria analítica:
     
-    $\left \{ \begin{array}{c}
+    \begin{equation}
+    \left \{ \begin{array}{c}
         r_1^2 = (x - x_1 )^2 + (y - y_1)^2  \\
         r_2^2 = (x - x_2 )^2 + (y - y_2)^2  \\
         ...  \\
         r_n^2 = (x - x_n )^2 + (y - y_n)^2 
-   \end{array} \right.$
+   \end{array} \right.
+    \end{equation}
+
     \par 
-    Depois subtraímos cada uma das equações a partir da primeira para denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida linearizamos o sistema
+    Depois subtraímos cada uma das equações a partir da primeira para 
+    denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida 
+    linearizamos o sistema (Equação~\ref{eq:lin})
+     que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
+
     
-    $\left \{  \begin{array}{c}
+    \begin{equation}
+    \left \{  \begin{array}{c}
         b_{21} = x(x_1 - x_2) + y(y_1 - y_2)  \\
         b_{31} = x(x_1 - x_3) + y(y_1 - y_3)  \\
         ...  \\
         b_{n1} = x(x_1 - x_n) + y(y_1 - y_n)
-   \end{array} \right.$\\
-     que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
+   \end{array} \right.
+        \label{eq:lin}
+    \end{equation}
+
 
     \subsection{Inferência Bayesiana}
   Segundo \citeonline{bayesian2001} a inferência bayesiana é dedução estatística através de evidências ou analíse observatória para que a inferência de uma hipótese possa vir a ser verdadeira, e no caso da localização de um dispositvo isso pode ser realizado utilizando RSS entre o nó de destino e os pontos de acesso.
@@ -233,10 +246,11 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         $P((x,y) | s_1, s_2, ..., s_n) = \alpha P(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$, nessa expressão $\alpha$ é um fator de nomalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante resaltar que essa é uma expressão para localizar alvos estáticos. 
         
     \subsection{K-Nearest-Neighbor}
-    Os algoritmos de vizinhaça ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve utilizar os nó ja classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN}, de outro modo, utilizar-se dos seus vizinhos para assim obter suas coordenadas com os cálculos baseados em RSS \cite{rfid2009review}.
-
-    \par
-    algumas das metricas abordada por \citeonline{knn-3dLAN} são:
+    Os algoritmos de vizinhaça ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve 
+    utilizar os nó ja classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN}, 
+    de outro modo, utilizar-se dos seus vizinhos para assim obter suas coordenadas com os cálculos baseados em RSS \cite{rfid2009review}.
+    %
+    Algumas das metricas abordada por \citeonline{knn-3dLAN} são:
 
     \begin{itemize}
     \item Distância Euclidiana 
@@ -259,11 +273,14 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
    \par
    \citeonline{rfid2009review} faz mostra uma outra abordagem para calcular as coordenadas do alvo obtidos a partir do sistema a seguir:
    
-   $\left \{ \begin{array}{c}
+   \begin{equation}
+   \left \{ \begin{array}{c}
         x= \sum_{i=1}^{k}w_{i}x_{i}   \\
         y= \sum_{i=1}^{k}w_{i}y_{i}  
-   \end{array} \right.$ \\
-    nesse sistema o $k$ representa a quantidade de vizinhos, $(x_i,y_i)$ são as coordenadas dos pontos de refências vizinhos e $w_i$ os pesos desses pontos,o cálculo dos pesos é feito a partir da diferençã de RSSI entre os pontos de refências e o alvo e as fórmulas para tal são:
+   \end{array} \right. 
+   \end{equation}
+    
+    Nesse sistema o $k$ representa a quantidade de vizinhos, $(x_i,y_i)$ são as coordenadas dos pontos de refências vizinhos e $w_i$ os pesos desses pontos,o cálculo dos pesos é feito a partir da diferençã de RSSI entre os pontos de refências e o alvo e as fórmulas para tal são:
     \begin{itemize}
         \item $w_i = \frac{1 / \sum_{j=1}^{m}|s_{ij} - s_{j}|}{\sum_{j=1}^{k} (1/ \sum_{j=1}^{m}|s_{ij} - s_{j}|)}$ 
         
@@ -278,7 +295,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
 \section{Modelagem de Sistemas}
     Esta seção tem por finalidade apresentar as forma cujo os sistemas computacionais são modelados de maneira abstrata, o processo de modelagem de sistema tem papel importante pois ajuda a entender e extrair os requisitos necessários para a construção do sistema.
     \subsection{UML - \textit{Unified Modeling Language}}
-    O UML(em português Linguagem de Modelagem Unificada ) é uma linguagem cujo principal papel é a construção, visualização e documentação de projetos de sistemas. Surgiu na década de 90, tendo em vista que havia a necessidade de uma linguagem para modelagem que funcionasse como uma norma e fosse aceita e utilizada pela indústria, ambientes acadêmicos e de investigação \cite{uml}.
+    O UML (em português Linguagem de Modelagem Unificada) é uma linguagem cujo principal papel é a construção, visualização e documentação de projetos de sistemas. Surgiu na década de 90, tendo em vista que havia a necessidade de uma linguagem para modelagem que funcionasse como uma norma e fosse aceita e utilizada pela indústria, ambientes acadêmicos e de investigação \cite{uml}.
     \par
     Na UML é possível agrupar elementos e relaciona-los de maneira lógica ou estrutural, isso é o conceito de diagramas. Os elementos tem um papel importante nos modelos, eles estarão organizados de acordos com a função desempenhada no sistema, podendo representar componetes do sistema, usuário, interfaces \cite{uml}.
     
