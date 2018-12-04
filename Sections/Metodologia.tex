@@ -1,6 +1,6 @@
 \label{chapter:metodo}
 
-Este Capítulo tem o objetivo de descrever a solução proposta neste trabalho, visando localizar e identificar objetos 
+Este capítulo tem o objetivo de descrever a solução proposta neste trabalho, visando localizar e identificar objetos 
 em ambientes confinados utilizando leitores e etiquetas passivas RFID, para gerenciamento e controle de bens.
 %
 Esta solução pode ser aplicada, por exemplo, para o controle e levantamento de patriminio de universidades.
@@ -28,7 +28,7 @@ que o objeto está em transição para outra sala no edifício.
         \end{figure}
 
 \par
-Na \autoref{fig:modelo}\todo[color=green]{Ampliar o texto da figura} é possível notar que há um dispositivo acoplado próximo a 
+Na \autoref{fig:modelo} é possível notar que há um dispositivo acoplado próximo a 
 porta de cada sala, esse dispositivo contém o leitor RFID, esse dispositvo será encarrecado de consultar um 
 servidor para assim tomar decisões do que será feito com o status do objeto, cada objeto possui uma tag RFID fixada 
 nele e quando passar pela porta o leitor identifica o objeto e altera sua as informações sobre sua localização.
@@ -38,7 +38,7 @@ O método proposto consiste basicamente nas seguintes etapas:
 \begin{enumerate}
     \item Identificação dos objetos que serão rastreados;
     \item Monitoramento e localização dos objetos rastreáveis em ambiente indoor; e
-    \item Configuração de controle e monitoramento de transição dos objetos. \todo[color=green]{Sugiro mudar para Controle e monitoramento de transição dos objetos}
+    \item Configuração de controle e monitoramento de transição dos objetos. 
 \end{enumerate}
 
 %
@@ -51,15 +51,16 @@ no sistema, para que ao entrar e sair das salas do edifício além de fornecer a
 possível ter detalhes sobre aquele objeto, dessa forma se objeto tiver uma registro local isso irá constar na 
 descrição do objeto. Essa etapa pode ser considerada como a fase de cadastro do objeto.
 
-\todo[color=green,inline]{Sugiro colocar uma foto de um objeto usando RFID}
 \begin{figure}[H]
               \caption{\label{fig:objeto}{Objeto com tag RFID}}
               \centering
-              \includegraphics[width=0.6\textwidth]{Figuras/monitor.png}
+              \includegraphics[width=0.4\textwidth]{Figuras/monitor.png}
               \legend{Fonte: Própria}
 \end{figure}
 \par
 Na \autoref{fig:objeto} é apresentado um objeto com uma tag RFID passiva anexada em seu corpo, todos os objetos que serão rastreáveis no sistemas possuirão uma tag RFID anexada da mesma forma.
+
+%
 \section{Monitoramento e Localização dos objetos rastreáveis}
 
 O monitoramento é realizado pelo sensor de RFID que estará em cada porta das salas do prédio e será responsável 
