@@ -68,7 +68,7 @@ identificar o objeto e repassar esta informação ao módulo wireless que irá e
 ocorrências/transições das salas. Assim, criando um log sobre transição de cada objeto, provendo ao usuário do sistema 
 alertas para que decisões necessárias sejam tomadas.
 
-\todo[inline]{Sugiro descrever aquela ideia de dizer que além das transições entre as salas também é possivel identificar 
+\todo[inline,color=red]{Sugiro descrever aquela ideia de dizer que além das transições entre as salas também é possivel identificar 
 aproximadamente a posição na sala. Como seria isto?}
 
 
@@ -116,15 +116,18 @@ Um tempo padrão deve ser configurado para os alertas, se um objeto exceder esse
 O tempo deve ser configurado na implatação do sistema. Um outro alerta que pode ser criado seria no caso de ser definido uma área de limite para alguns objetos e ele sejam deslocados para fora dessa área delimitada.
 \par
 Cada transição de objeto também será armazenada nos logs do sistema com data e hora, sala que saiu ou entrou, para que os eventos ocorridos sejam registrados e possua mais um recurso na consulta para caso ocorra falhas.
-\todo[inline]{Sugiro descrever um pouco mais, talvez falar que com os dados de log das transições do sistema é possivel também delimitar
+\todo[inline,color=green]{Sugiro descrever um pouco mais, talvez falar que com os dados de log das transições do sistema é possivel também delimitar
 salas que objetos não podem sair, ou não podem entrar, criando zones de controle.}
 
 
-\section{Conexão dos dispositivos de porta com o servidor}
+\section{Conexão dos dispositivos de porta com o servidor e energia}
 A comunicação entre os dispositivos da porta com o servidor acontecerá por meio de uma WLAN, ou seja todos estarão em uma rede 
 local e assim poderão se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor, 
 não havendo comunicação entre dois dispositivos. O Arduino nano contará com um módulo ESP-8266, esse módulo possibilita a 
-conexão com uma rede wireless 802.11 b/g/n\todo{Falar um pouco sobre baixo consumo de energia}.
+conexão com uma rede wireless 802.11 b/g/n\todo[color=green]{Falar um pouco sobre baixo consumo de energia}.
+
+\par
+O Arduino nano opera em uma voltagem de 5V de energia contínua, um consumo relativamente baixo em relação as outros dispositivos eletrônicos e as tag passivas não possuem alimentação, elas são alimentadas apenas pela energia eletromagnética emitida pelos leitores RFID, esses dois quesitos tornam o protótipo ainda mais viável, pois isso é um fator positivo visto que o custo pós implantação não é alto.
 
 
 \section{Modelo de Prototipação}
