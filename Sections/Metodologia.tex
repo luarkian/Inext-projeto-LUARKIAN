@@ -28,7 +28,7 @@ que o objeto está em transição para outra sala no edifício.
         \end{figure}
 
 \par
-Na \autoref{fig:modelo}\todo{Ampliar o texto da figura} é possível notar que há um dispositivo acoplado próximo a 
+Na \autoref{fig:modelo}\todo[color=green]{Ampliar o texto da figura} é possível notar que há um dispositivo acoplado próximo a 
 porta de cada sala, esse dispositivo contém o leitor RFID, esse dispositvo será encarrecado de consultar um 
 servidor para assim tomar decisões do que será feito com o status do objeto, cada objeto possui uma tag RFID fixada 
 nele e quando passar pela porta o leitor identifica o objeto e altera sua as informações sobre sua localização.
@@ -37,9 +37,8 @@ nele e quando passar pela porta o leitor identifica o objeto e altera sua as inf
 O método proposto consiste basicamente nas seguintes etapas:
 \begin{enumerate}
     \item Identificação dos objetos que serão rastreados;
-    \item Monitoramento dos objetos rastreáveis;
-    \item Localização do objetos em ambiente indoor; e
-    \item Configuração\todo{Sugiro mudar para Controle e monitoramento de transição dos objetos} do tempo para alertas
+    \item Monitoramento e localização dos objetos rastreáveis em ambiente indoor; e
+    \item Configuração de controle e monitoramento de transição dos objetos. \todo[color=green]{Sugiro mudar para Controle e monitoramento de transição dos objetos}
 \end{enumerate}
 
 %
@@ -52,8 +51,15 @@ no sistema, para que ao entrar e sair das salas do edifício além de fornecer a
 possível ter detalhes sobre aquele objeto, dessa forma se objeto tiver uma registro local isso irá constar na 
 descrição do objeto. Essa etapa pode ser considerada como a fase de cadastro do objeto.
 
-\todo[inline]{Sugiro colocar uma foto de um objeto usando RFID}
-
+\todo[color=green,inline]{Sugiro colocar uma foto de um objeto usando RFID}
+\begin{figure}[H]
+              \caption{\label{fig:objeto}{Objeto com tag RFID}}
+              \centering
+              \includegraphics[width=0.6\textwidth]{Figuras/monitor.png}
+              \legend{Fonte: Própria}
+\end{figure}
+\par
+Na \autoref{fig:objeto} é apresentado um objeto com uma tag RFID passiva anexada em seu corpo, todos os objetos que serão rastreáveis no sistemas possuirão uma tag RFID anexada da mesma forma.
 \section{Monitoramento e Localização dos objetos rastreáveis}
 
 O monitoramento é realizado pelo sensor de RFID que estará em cada porta das salas do prédio e será responsável 
@@ -93,22 +99,22 @@ Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, o
 RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar 
 salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
 
-\par
-O sistema conterá um servidor\todo{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e outras informações necessárias} 
-que possui a função de tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, 
+\par\todo{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e outras informações necessárias}
+O sistema conterá um servidor web que estará conectando a mesma rede LAN (local area network) que os dispositivos de porta, o mesmo possuirá uma base de dados para armazernar informações e detalhes de cada objeto e será responsável por tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, 
 o papel do servidor é de grande importância também sendo utilizado para consultar informações referentes aos objetos.
 
 
-\section{Alertas}
+\section{Configuração de controle e monitoramento de transição dos objetos}
 
 Para um melhor gerenciamento dos objetos, o sistema conta com alertas para que caso um objeto inicie uma transição 
 para outra sala e nesse trajeto o objeto não entre em nenhuma sala excedendo um tempo determinado, um alerta é gerado 
 informado que o objeto não entrou em nenhuma sala do edificio até o momento da geração do alerta.
 
 \par
-Um tempo padrão deve ser configurado para os alertas, se um objeto excede esse tempo na transição um alerta é gerado no servidor. 
-O tempo deve ser configurado na implatação do sistema.
-
+Um tempo padrão deve ser configurado para os alertas, se um objeto exceder esse tempo na transição um alerta é gerado no servidor. 
+O tempo deve ser configurado na implatação do sistema. Um outro alerta que pode ser criado seria no caso de ser definido uma área de limite para alguns objetos e ele sejam deslocados para fora dessa área delimitada.
+\par
+Cada transição de objeto também será armazenada nos logs do sistema com data e hora, sala que saiu ou entrou, para que os eventos ocorridos sejam registrados e possua mais um recurso na consulta para caso ocorra falhas.
 \todo[inline]{Sugiro descrever um pouco mais, talvez falar que com os dados de log das transições do sistema é possivel também delimitar
 salas que objetos não podem sair, ou não podem entrar, criando zones de controle.}
 
@@ -139,13 +145,13 @@ essa conexão é síncrona e é realizada por meio dos pinos de $9$ à $13$. A p
 segue o esquema abaixo que também pode ser visto na \autoref{fig:esq_conexoes}:
 \begin{itemize}
     \item 3.3V - conectado ao pino de 3.3v no Arduino, essa conexão faz a alimentação do leitor RFID;
-    \item RST - conectado ao pino 9 do Arduino;
-    \item GND - conectado ao pino GND do Arduino;
-    \item NC - não utilizado;
-    \item MISO - conectado ao pino 12;
-    \item MOSI - conectado ao pino 11; 
-    \item SCK - conectado ao pino 13;
-    \item SDA - conecatado ao pino 10.
+    \item RST (\textit{Reset})- conectado ao pino 9 do Arduino;
+    \item GND (\textit{graduated neutral density filter}) - conectado ao pino GND do Arduino;
+    \item NC/IRQ (\textit{Interrupt Request})- não utilizado;
+    \item MISO (\textit{Master In Slave Out}) - conectado ao pino 12;
+    \item MOSI  (\textit{Master Out Slave In}) - conectado ao pino 11; 
+    \item SCK  (\textit{Serial Clock}) - conectado ao pino 13;
+    \item SDA/ SS (\textit{Serial Data Line/ Select Slave}) - conectado ao pino 10.
 \end{itemize}
 
 \todo[inline]{Sugiro descrever a função de cada um dos pinos acima.}
@@ -159,16 +165,15 @@ segue o esquema abaixo que também pode ser visto na \autoref{fig:esq_conexoes}:
 
 \par
 O ESP8266 é um módulo que permite a conexão do Arduino com redes wireless 802.11 b/g/n, esse módulo pode 
-trabalhar em dois modos tanto como ponto de acesso ou no modo STA\todo{Descrever}, estação que envia e recebe dados. 
+trabalhar em dois modos tanto como ponto de acesso ou no modo estação que envia e recebe dados\todo[color=green]{Descrever}. 
 \begin{itemize}
-    \item 3.3V - conectado ao pino de 3.3v no Arduino;
-    \item GND - conectado ao pino GND do Arduino;
-    \item GPIO0 - não conectado ;
-    \item GPIO2 - não conectado ; 
-    \item TX - conectado ao pino digital 2 no Arduino;
-    \item RX - conecatado ao pino digital 3 no Arduino junto com dois resistores um de 220$\Omega$ e outro de 330$\Omega$ para dividir a tensão;
-    \item RST - não conecatado ;
-    \item CH\_PD - conecatado ao pino 3.3v mas com resistor de 10 $K\Omega$.
+    \item GND (\textit{graduated neutral density filter}) - conectado ao pino GND do Arduino;
+    \item GPIO0 (\textit{General Purpose Input/Output}) - não conectado ;
+    \item GPIO2 (\textit{General Purpose Input/Output})- não conectado ; 
+    \item TX (\textit{Transmission}) - conectado ao pino digital 2 no Arduino;
+    \item RX (\textit{Received})- conectado ao pino digital 3 no Arduino junto com dois resistores um de 220$\Omega$ e outro de 330$\Omega$ para dividir a tensão;
+    \item RST (\textit{Reset}) - não conectado ;
+    \item CH\_PD (\textit{Chip enable}) - conectado ao pino 3.3v mas com resistor de 10 $K\Omega$.
 \end{itemize}
 
 \todo[inline]{Descrever a função dos pinos}
