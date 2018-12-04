@@ -99,8 +99,8 @@ Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, o
 RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar 
 salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
 
-\par\todo{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e outras informações necessárias}
-O sistema conterá um servidor web que estará conectando a mesma rede LAN (local area network) que os dispositivos de porta, o mesmo possuirá uma base de dados para armazernar informações e detalhes de cada objeto e será responsável por tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, 
+\par\todo[color=green]{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e outras informações necessárias}
+O sistema conterá um servidor web desenvolvido utilizando Node.js, que estará conectado a mesma rede LAN (local area network) que os dispositivos de porta, o mesmo possuirá uma base de dados sendo o sistema de gerenciamento de dados o MongoDB, para armazernar informações e detalhes de cada objeto e tal servidor será responsável por tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, 
 o papel do servidor é de grande importância também sendo utilizado para consultar informações referentes aos objetos.
 
 
@@ -123,7 +123,7 @@ salas que objetos não podem sair, ou não podem entrar, criando zones de contro
 A comunicação entre os dispositivos da porta com o servidor acontecerá por meio de uma WLAN, ou seja todos estarão em uma rede 
 local e assim poderão se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor, 
 não havendo comunicação entre dois dispositivos. O Arduino nano contará com um módulo ESP-8266, esse módulo possibilita a 
-conexão com uma rede weriless 802.11 b/g/n\todo{Falar um pouco sobre baixo consumo de energia}.
+conexão com uma rede wireless 802.11 b/g/n\todo{Falar um pouco sobre baixo consumo de energia}.
 
 
 \section{Modelo de Prototipação}
@@ -154,7 +154,7 @@ segue o esquema abaixo que também pode ser visto na \autoref{fig:esq_conexoes}:
     \item SDA/ SS (\textit{Serial Data Line/ Select Slave}) - conectado ao pino 10.
 \end{itemize}
 
-\todo[inline]{Sugiro descrever a função de cada um dos pinos acima.}
+\todo[inline,color=green]{Sugiro descrever a função de cada um dos pinos acima.}
 
 \begin{figure}[H]
               \caption{\label{fig:moduloWii}{Módulo Wifi ESP8266}}
@@ -176,7 +176,7 @@ trabalhar em dois modos tanto como ponto de acesso ou no modo estação que envi
     \item CH\_PD (\textit{Chip enable}) - conectado ao pino 3.3v mas com resistor de 10 $K\Omega$.
 \end{itemize}
 
-\todo[inline]{Descrever a função dos pinos}
+\todo[inline,color=green]{Descrever a função dos pinos}
 
 \begin{figure}[H]
               \caption{\label{fig:esq_conexoes}{Esquema de Conexões}}
