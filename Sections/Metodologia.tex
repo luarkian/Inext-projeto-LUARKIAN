@@ -68,13 +68,13 @@ identificar o objeto e repassar esta informação ao módulo wireless que irá e
 ocorrências/transições das salas. Assim, criando um log sobre transição de cada objeto, provendo ao usuário do sistema 
 alertas para que decisões necessárias sejam tomadas.
 
-\todo[inline,color=red]{Sugiro descrever aquela ideia de dizer que além das transições entre as salas também é possivel identificar 
-aproximadamente a posição na sala. Como seria isto?}
+%\todo[inline,color=red]{Sugiro descrever aquela ideia de dizer que além das transições entre as salas também é possivel identificar 
+%aproximadamente a posição na sala. Como seria isto?}
 
 
 \subsection{Fluxo de execução do método em cada sala}
 Os dispositivos de cada sala terão o seguinte fluxo de execução apresentado na \autoref{fig:fluxograma}, 
-o fluxo exemplifica as tarefas que cada dispositivo executará. Neste fluxograma, os retangulos represetam 
+o fluxo exemplifica as tarefas que cada dispositivo executará. Neste fluxograma, os retângulos represetam 
 processos e os retângulos com bordas duplas processos pré-definidos, os losangos represetam as tomadas de decisões, 
 os icones com bordas curvas para o mesmo lado representam operações nos dados do sistema e o ícone com bordas curvas 
 opostas represetam o inicio do fluxo.
@@ -100,7 +100,8 @@ Os objetos serão localizado no sistema baseado nos algoritmos de proximidade, o
 RFID identifica uma etiqueta, esse objeto terá a localização referente à aquele leitor, nesse sistema os leitores irão representar 
 salas, portanto a localização indicará que o objeto estará na sala cujo o leitor que realizou a leitura representa.
 
-\par\todo[color=green]{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e outras informações necessárias}
+%\par\todo[color=green]{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e 
+%outras informações necessárias}
 O sistema conterá um servidor web desenvolvido utilizando Node.js, que estará conectado a mesma rede LAN (local area network) que os dispositivos de porta, o mesmo possuirá uma base de dados sendo o sistema de gerenciamento de dados o MongoDB, para armazernar informações e detalhes de cada objeto e tal servidor será responsável por tratar problemas relacionados a leituras de uma mesma etiqueta mais de uma vez, 
 o papel do servidor é de grande importância também sendo utilizado para consultar informações referentes aos objetos.
 
@@ -113,18 +114,23 @@ informado que o objeto não entrou em nenhuma sala do edificio até o momento da
 
 \par
 Um tempo padrão deve ser configurado para os alertas, se um objeto exceder esse tempo na transição um alerta é gerado no servidor. 
-O tempo deve ser configurado na implatação do sistema. Um outro alerta que pode ser criado seria no caso de ser definido uma área de limite para alguns objetos e ele sejam deslocados para fora dessa área delimitada.
+O tempo deve ser configurado na implatação do sistema. Um outro alerta que pode ser criado seria no caso de 
+ser definido uma área de limite para alguns objetos e ele sejam deslocados para fora dessa área delimitada.
+
 \par
-Cada transição de objeto também será armazenada nos logs do sistema com data e hora, sala que saiu ou entrou, para que os eventos ocorridos sejam registrados e possua mais um recurso na consulta para caso ocorra falhas.
-\todo[inline,color=green]{Sugiro descrever um pouco mais, talvez falar que com os dados de log das transições do sistema é possivel também delimitar
-salas que objetos não podem sair, ou não podem entrar, criando zones de controle.}
+Cada transição de objeto também será armazenada nos logs do sistema com data e hora, sala que saiu ou entrou, para que 
+os eventos ocorridos sejam registrados e possua mais um recurso na consulta para caso ocorra falhas.
+%\todo[inline,color=green]{Sugiro descrever um pouco mais, talvez falar que com os dados de log das 
+%transições do sistema é possivel também delimitar
+%salas que objetos não podem sair, ou não podem entrar, criando zones de controle.}
 
 
 \section{Conexão dos dispositivos de porta com o servidor e energia}
 A comunicação entre os dispositivos da porta com o servidor acontecerá por meio de uma WLAN, ou seja todos estarão em uma rede 
 local e assim poderão se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor, 
 não havendo comunicação entre dois dispositivos. O Arduino nano contará com um módulo ESP-8266, esse módulo possibilita a 
-conexão com uma rede wireless 802.11 b/g/n\todo[color=green]{Falar um pouco sobre baixo consumo de energia}.
+conexão com uma rede wireless 802.11 b/g/n.
+%\todo[color=green]{Falar um pouco sobre baixo consumo de energia}.
 
 \par
 O Arduino nano opera em uma voltagem de 5V de energia contínua, um consumo relativamente baixo em relação as outros dispositivos eletrônicos e as tag passivas não possuem alimentação, elas são alimentadas apenas pela energia eletromagnética emitida pelos leitores RFID, esses dois quesitos tornam o protótipo ainda mais viável, pois isso é um fator positivo visto que o custo pós implantação não é alto.
@@ -158,7 +164,7 @@ segue o esquema abaixo que também pode ser visto na \autoref{fig:esq_conexoes}:
     \item SDA/ SS (\textit{Serial Data Line/ Select Slave}) - conectado ao pino 10.
 \end{itemize}
 
-\todo[inline,color=green]{Sugiro descrever a função de cada um dos pinos acima.}
+%\todo[inline,color=green]{Sugiro descrever a função de cada um dos pinos acima.}
 
 \begin{figure}[H]
               \caption{\label{fig:moduloWii}{Módulo Wifi ESP8266}}
@@ -169,7 +175,8 @@ segue o esquema abaixo que também pode ser visto na \autoref{fig:esq_conexoes}:
 
 \par
 O ESP8266 é um módulo que permite a conexão do Arduino com redes wireless 802.11 b/g/n, esse módulo pode 
-trabalhar em dois modos tanto como ponto de acesso ou no modo estação que envia e recebe dados\todo[color=green]{Descrever}. 
+trabalhar em dois modos tanto como ponto de acesso ou no modo estação que envia e recebe dados.
+%\todo[color=green]{Descrever}. 
 \begin{itemize}
     \item GND (\textit{graduated neutral density filter}) - conectado ao pino GND do Arduino;
     \item GPIO0 (\textit{General Purpose Input/Output}) - não conectado ;
@@ -180,7 +187,7 @@ trabalhar em dois modos tanto como ponto de acesso ou no modo estação que envi
     \item CH\_PD (\textit{Chip enable}) - conectado ao pino 3.3v mas com resistor de 10 $K\Omega$.
 \end{itemize}
 
-\todo[inline,color=green]{Descrever a função dos pinos}
+%\todo[inline,color=green]{Descrever a função dos pinos}
 
 \begin{figure}[H]
               \caption{\label{fig:esq_conexoes}{Esquema de Conexões}}
