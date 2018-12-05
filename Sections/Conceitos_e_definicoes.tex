@@ -1,5 +1,5 @@
 \label{chapter:conceitos}
-O principal objetivo desse capítulo é apresentar conceitos necessários para o entendimento deste trabalho. 
+O principal objetivo desse capítulo é apresentar conceitos necessários para o entendimento deste trabalho.
 Os assuntos abordados neste capítulo são:  
 sistemas embarcados, sistemas de comunicação e localização, algoritmos utilizados em localização, e modelagem.
 
@@ -19,16 +19,16 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
               \legend{Fonte: \cite{Li:2003:RCE:829584}}
             \end{figure}
     \par
-    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração 
+    Uma definição geral para sistemas embarcados: são sistemas que realizam uma função dedica e possuem a integração
     de hardware e software fortemente acoplados, geralmente são uma parte específica de um sistema maior \cite{Li:2003:RCE:829584}.
     
     \par
     % microcontroladores e microprocessadores
-    Os microcontroladores e microprocessadores são dispositivos fundamentais nos sistemas embarcados, porém eles possuem algumas diferenças, 
-    entre as principais delas é que o microcontroladores já possuem todos os componentes necessários para seu funcionamento diferente dos microprocessadores que necessitam de outros componentes e perifércios para funcionar por exemplo memória, dispositivos de entrade/saída, conversores de sinais \cite{ayala:1991}.  
+    Os microcontroladores e microprocessadores são dispositivos fundamentais nos sistemas embarcados, porém eles possuem algumas diferenças,
+    entre as principais delas é que o microcontroladores já possuem todos os componentes necessários para seu funcionamento diferente dos microprocessadores que necessitam de outros componentes e periféricos para funcionar por exemplo memória, dispositivos de entrada/saída, conversores de sinais \cite{ayala:1991}.  
     
     \par
-    Um exemplo de microcontrolador seria o ATmega328P, que pode ser encontrado no Arduíno Nano, esse microcontrolador conta com 32 Kilobytes para a gravação de programas, 2 Kilobytes de SRAM (\textit{Static Random Access Memory}, Memoria de acesso aleatório estático), 1 Kilobyte de EEPROM ( \textit{Electrically-Erasable Programmable Read-Only Memory}, Memória somente leitura programável apagável eletricamente) e 2 Kilobytes para o carregador de inicialização, ATmega328P pode ser visualizado na \autoref{fig:ATmega} \cite{arduino}. 
+    Um exemplo de microcontrolador seria o ATmega328P, que pode ser encontrado no Arduíno Nano, esse microcontrolador conta com 32 Kilobytes para a gravação de programas, 2 Kilobytes de SRAM (\textit{Static Random Access Memory}, Memória de acesso aleatório estático), 1 Kilobyte de EEPROM ( \textit{Electrically-Erasable Programmable Read-Only Memory}, Memória somente leitura programável apagável eletricamente) e 2 Kilobytes para o carregador de inicialização, ATmega328P pode ser visualizado na \autoref{fig:ATmega} \cite{arduino}.
 
    \begin{figure}[h!]
               \caption{\label{fig:ATmega}{Microcontrolador ATmega328P}}
@@ -49,11 +49,11 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
     \subsection{IoT}
     \par
     A possibilidade de comunicação entre objetos de uso cotidiano do ambiente real com a internet referência o termo IoT, quando um objeto está conectado a rede de computadores e passa a transmitir informações de seu funcionamento ou estado, tal objeto passa a ser denominado de objeto inteligente \cite{iot2016}.
-    \par 
+    \par
         % Esse balão "corrigir" não entendi muito bem o erro era so a forma da citação ou texto ?
-    De acordo com \citeonline{iot2017}, o conceito de IoT não é novo, pois desde os passos iniciais da internet ja se 
-    pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o 
-    desenvolvimento de uma infinidades de padrões e protocolos para a integração de 
+    De acordo com \citeonline{iot2017}, o conceito de IoT não é novo, pois desde os passos iniciais da internet já se
+    pensava em formas de traçar a comunicação entre objetos do dia a dia com a internet. Com os avanços de sistemas embarcados o
+    desenvolvimento de uma infinidades de padrões e protocolos para a integração de
     WSN (\textit{Wireless sensor network}, rede de sensores sem fio) tornaram IoT uma realidade.
     \begin{figure}[H]
               \caption{\label{fig:iot}{Internet of Things.}}
@@ -63,29 +63,29 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
         \end{figure}
     \par
 
-    A \autoref{fig:iot} representa bem o cenário que IoT proporciona, na imagem é possível notar que todos os objetos estão conectado por 
-    uma espécie de cabo azul, mas isso é so uma representação, essa conexão também pode ser através de conectividade sem fio. Ainda 
-    sobre a imagem, o \textit{smartphone} tem um papel interesante, pois ele está sendo o encarregado de mostrar as informações enviadas 
+    A \autoref{fig:iot} representa bem o cenário que IoT proporciona, na imagem é possível notar que todos os objetos estão conectado por
+    uma espécie de cabo azul, mas isso é so uma representação, essa conexão também pode ser através de conectividade sem fio. Ainda
+    sobre a imagem, o \textit{smartphone} tem um papel interessante, pois ele está sendo o encarregado de mostrar as informações enviadas
     pelos objetos para o usuário.
 
-    \citeonline{homesmart} em seu trabalho, onde ele propõe um sistema \textit{smart home} que contém os serviços de automação residencial controlando ar-condicionados, umidificadores, filtros de ar e movimentos das cortinas baseados nas informações do clima, segurança domestica para previnir explosões e acidentes e o último serviço é o gerenciamento através da internet é um exemplo real de que os conceitos de IoT vem sendo estudados e implementados no dia-a-dia. Muitas aplicações vem sendo desenvolvidas para o conforto, segurança ou monitaramento partindo dos conceitos de IoT.
+    \citeonline{homesmart} em seu trabalho, onde ele propõe um sistema \textit{smart home} que contém os serviços de automação residencial controle de ar-condicionados, umidificadores, filtros de ar e movimentos das cortinas baseados nas informações do clima, segurança doméstica para prevenir explosões e acidentes e o último serviço é o gerenciamento através da internet é um exemplo real de que os conceitos de IoT vem sendo estudados e implementados no dia-a-dia. Muitas aplicações vêm sendo desenvolvidas para o conforto, segurança ou monitoramento partindo dos conceitos de IoT.
     
 \section{Comunicação Sem Fio}
     \par
-    A medida que os elétrons se movimentam ondas eletromagnéticas são criada no espaço, essas ondas são medidas de acordo com suas oscilações e chamadas de frequência (Hertz), o comprimento dessa onda é medido pela distância de dois pontos máximos ou dois pontos minímos seguidos \cite{tenenbaum2002}.
+    A medida que os elétrons se movimentam ondas eletromagnéticas são criada no espaço, essas ondas são medidas de acordo com suas oscilações e chamadas de frequência (Hertz), o comprimento dessa onda é medido pela distância de dois pontos máximos ou dois pontos mínimos seguidos \cite{tenenbaum2002}.
     %\par
-    Segundo \citeonline{tenenbaum2002} ao colocar uma antena em um circuito elétrico apropriado pode-se  transmistir e receber ondas 
-    eletromagnéticas, a comunição sem fio é baseada nisso.
+    Segundo \citeonline{tenenbaum2002} ao colocar uma antena em um circuito elétrico apropriado pode-se  transmitir e receber ondas
+    eletromagnéticas, a comunicação sem fio é baseada nisso.
     
     \subsection{Transmissão por rádio}
-        % o que é 
+        % o que é
         
         \par
         A transmissão de dados por rádio pode acontecer de duas maneiras: não-direcional e direcional  \cite{torres2001}.
         
         \begin{itemize}
         \item{Não-Direcional: }
-        Quando a transmissão é feita pela forma não-direcional, a frequencias são emitidads em todas as direções e qualquer antena localizada na região de alcance das ondas de rádio podem captar os dados \cite{torres2001}, isso pode ser visto na \autoref{fig:nao_direciona}.
+        Quando a transmissão é feita pela forma não-direcional, a frequências são emitidas em todas as direções e qualquer antena localizada na região de alcance das ondas de rádio podem captar os dados \cite{torres2001}, isso pode ser visto na \autoref{fig:nao_direciona}.
             \begin{figure}[H]
               \caption{\label{fig:nao_direciona}{Transmissão não-direcional.}}
               \centering
@@ -93,10 +93,10 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
               \legend{Fonte: \cite{torres2001}}
             \end{figure}
         \par
-        A  \autoref{fig:nao_direciona} mostra que as ondas de radio são emitidas em todas as direções e que qualquer antena/recepetor que estiver no alcance pode receber os dados do emissor.
+        A  \autoref{fig:nao_direciona} mostra que as ondas de rádio são emitidas em todas as direções e que qualquer antena/receptor que estiver no alcance pode receber os dados do emissor.
         
         \item{Direcional: }
-        A transmissão no sistema direcional necessita que os aparelhos transmissores e receptores estejam apontando um na direção do outro para que haja comunicação, sem contar que não pode ter obstaculos entre eles senão dificulta a transmissão \cite{torres2001}. A \autoref{fig:direcional} exemplifica o funcionamento dessa forma de transmissão.
+        A transmissão no sistema direcional necessita que os aparelhos transmissores e receptores estejam apontando um na direção do outro para que haja comunicação, sem contar que não pode ter obstáculos entre eles senão dificulta a transmissão \cite{torres2001}. A \autoref{fig:direcional} exemplifica o funcionamento dessa forma de transmissão.
 
         \begin{figure}[H]
               \caption{\label{fig:direcional}{Transmissão direcional.}}
@@ -105,7 +105,7 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
               \legend{Fonte: \cite{torres2001}}
         \end{figure}
         \par
-        De outro modo a \autoref{fig:direcional} mostra que o primeiro transmissor dever estar direcionado para a direcção do segundo trasmissor, e assim dever acontecer com o segundo transmissor também.
+        De outro modo a \autoref{fig:direcional} mostra que o primeiro transmissor deve estar direcionado para a direcção do segundo transmissor, e assim deve acontecer com o segundo transmissor também.
         \end{itemize}    
 \section{Localização}
 \par
@@ -123,18 +123,18 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
               \legend{Fonte: \cite{gpsEduardo2005}}
         \end{figure}
         \par
-        A  \autoref{fig:satelites} mostra a movimentação dos satélites em torno da Terra para assim enviar sinais para os receptores que por sus vez interpretam esses sinais resultando em seu posicionamento na Terra.
+        A  \autoref{fig:satelites} mostra a movimentação dos satélites em torno da Terra para assim enviar sinais para os receptores que por sua vez interpretam esses sinais resultando em seu posicionamento na Terra.
  
     \subsection{WLAN\label{subsection:wlan}}
     \par
     A localização em ambientes indoor utilizando WLANs pode ser feita com a RSSI, \textit{Angle of Arrival} (AOA), ou \textit{Time Difference of Arrival} (TDOA) \cite{wifiFernandes}. Os dispositivos devem possuir conectividade sem fio para que seja possível saber seu posicionamento no ambiente. A função que permite a utilização de RSSI está disponível em todas as interfaces 802.11 \cite{Wlan2012}.
     
     \par
-    Entre as inúmeras maneiras de localizar dispositivos em ambientes fechados utilizando WLANs, algumas são: 
+    Entre as inúmeras maneiras de localizar dispositivos em ambientes fechados utilizando WLANs, algumas são:
     \begin{itemize}
         \item {Triangulação:}
         \par
-        Essa forma de localizar faz uso de AOA, que seria computação dos ângulos a múltiplos ponto de acesso, o resultado disso é uma interceptação que resulta na provável localização, isso pode ser visto na \autoref{fig:triangulacao} \cite{wifiFernandes}. 
+        Essa forma de localizar faz uso de AOA (\textit{angle of arrival}), que seria computação dos ângulos a múltiplos ponto de acesso, o resultado disso é uma interceptação que resulta na provável localização, isso pode ser visto na \autoref{fig:triangulacao} \cite{wifiFernandes}.
            \begin{figure}[H]
               \caption{\label{fig:triangulacao}{Triangulação.}}
               \centering
@@ -142,7 +142,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
               \legend{Fonte: \cite{wifiFernandes}}
         \end{figure}
         \item {Trilateração: }
-        \par 
+        \par
        Utilizando propriedades geométricas essa técnica faz cálculos entre múltiplos pontos de acesso para assim obter a posição do dispositivo \cite{wifiFernandes}.
         \begin{figure}[H]
               \caption{\label{fig:trilateracao}{Trilateração.}}
@@ -151,14 +151,14 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
               \legend{Fonte: \cite{wifiFernandes}}
         \end{figure}
        \par
-        Na \autoref{fig:trilateracao} é mostrado que há uma a comunicação entre os pontos de acesso para assim poder efetuar os cálculos, esses cálculos são uma forma de saber a TDOA para assim estimar a posição do objeto \cite{wifiFernandes}.
+        Na \autoref{fig:trilateracao} é mostrado que há uma a comunicação entre os pontos de acesso para assim poder efetuar os cálculos, esses cálculos são uma forma de saber a TDOA (\textit{time difference of arrival})  para assim estimar a posição do objeto \cite{wifiFernandes}.
         
         \item {Reconhecimento de padrões:}
         \par
-        O RSS é o principal requisito dessa técnica, em que é feita medições prévias para fazer uma comparação com os dados do banco de dados. Inicialmente é necessário uma fase em que é feita a calibração para se obter o mapa de assinatura \cite{wifiFernandes}.
+        O RSS (\textit{received strength signal}) é o principal requisito dessa técnica, em que é feita medições prévias para fazer uma comparação com os dados do banco de dados. Inicialmente é necessário uma fase em que é feita a calibração para se obter o mapa de assinatura \cite{wifiFernandes}.
         
         \par
-        O mapa de assinatura é basicamente dados do banco que representam a coleção das medidas de RSSI em diferentes locais para todos os pontos de acesso no ambiente \cite{wifiFernandes}. Na \autoref{fig:fingerprinting} é mostrado seu funcionamento, onde cada ponto de acesso se comunica com o servidor para assim fazer uma comparação com os dados do mapa de assinatura.
+        O mapa de assinatura é basicamente dados do banco que representam a coleção das medidas de RSSI (\textit{received strength signal indicator}) em diferentes locais para todos os pontos de acesso no ambiente \cite{wifiFernandes}. Na \autoref{fig:fingerprinting} é mostrado seu funcionamento, onde cada ponto de acesso se comunica com o servidor para assim fazer uma comparação com os dados do mapa de assinatura.
          \begin{figure}[H]
               \caption{\label{fig:fingerprinting}{Reconhecimento de padrões.}}
               \centering
@@ -175,7 +175,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
     O LANDMARC faz uso de tags RFID ativas para determinar o local das tags que serão localizadas, essas tags ativas são colocadas em pontos já conhecidos pelo sistema e servem como pontos de referência e assim diminuir o número de leitores e ter uma melhor precisão no ambiente \cite{RFIDapplicationsTechniques}.
     
     \par
-    Através das tags ativas é possível se obter informações com relação a intensidade do sinal, essa informação é utilizada para calibrar a distância para as tags de rastreio por meio de uma soma com o peso atribuído as tags de referências mais próximas, é importante resaltar que a precisão dos resultados depende da forma que as tags de referência são posicionadas \cite{RFIDapplicationsTechniques}.
+    Através das tags ativas é possível se obter informações com relação a intensidade do sinal, essa informação é utilizada para calibrar a distância para as tags de rastreio por meio de uma soma com o peso atribuído às tags de referências mais próximas, é importante ressaltar que a precisão dos resultados depende da forma que as tags de referência são posicionadas \cite{RFIDapplicationsTechniques}.
     
     \begin{figure}[H]
               \caption{\label{fig:landmarc2a}{LANDMARC.}}
@@ -184,7 +184,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
               \legend{Fonte: \cite{landmarc}}
         \end{figure}
     \par
-    Na \autoref{fig:landmarc2a} mostra a aplicação sendo utilizada em um ambiente real por \citeonline{landmarc}, em que os retangulos cinzas são leitores RFID, os retangulos brancos são tags de refências e os pontos pretos são tags a serem localizadas, e dessa forma o sistema calcula as coordenadas dos objetos.
+    Na \autoref{fig:landmarc2a} mostra a aplicação sendo utilizada em um ambiente real por \citeonline{landmarc}, em que os retângulos cinzas são leitores RFID, os retângulos brancos são tags de referências e os pontos pretos são tags a serem localizadas, e dessa forma o sistema calcula as coordenadas dos objetos.
 \begin{comment}    
     \subsection{Sistemas de Localização }
      \begin{itemize}
@@ -196,10 +196,10 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
 \section{Algoritmos de Localização indoor}
 Nesta seção serão abordados alguns dos algoritmos que já foram utilizados para localização em ambientes indoor.
     \subsection{Multilateração}
-    A multilaterção estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de refrência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências, é um método utilizado para suprir a trilaterção. A inserção de mais nós tem por finalidade aumentar a precisão e diminuir a região de incerteza \cite{rfid2009review}.
+    A multilateração estima a coordenadas do nó de destino a partir das distâncias do nó de destino para o nó de referência que possui coordenadas conhecidas, é o mesmo que ocorre na trilateração, porém a multilateração pode-se utilizar 2,3 ou n nós de referências, é um método utilizado para suprir a trilateração. A inserção de mais nós tem por finalidade aumentar a precisão e diminuir a região de incerteza \cite{rfid2009review}.
     \par
-    Segundo \citeonline{rfid2009review} os calculos são execultados da seguinte forma, havendo \textit{n} nós de referência, que serão 
-    repesentado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas ja conhecidas $( x_k, y_k )$, $T$ representando 
+    Segundo \citeonline{rfid2009review} os cálculos são executados da seguinte forma, havendo \textit{n} nós de referência, que serão
+    representado por $R_k$,  $k = \left[ 1, 2, ... , n \right] $ com suas coordenadas já conhecidas $( x_k, y_k )$, $T$ representando
     o nó alvo com coordenadas desconhecidas $(x,y)$, podemos estimar utilizando a fórmula da distância da geometria analítica:
     
     \begin{equation}
@@ -207,15 +207,15 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         r_1^2 = (x - x_1 )^2 + (y - y_1)^2  \\
         r_2^2 = (x - x_2 )^2 + (y - y_2)^2  \\
         ...  \\
-        r_n^2 = (x - x_n )^2 + (y - y_n)^2 
+        r_n^2 = (x - x_n )^2 + (y - y_n)^2
    \end{array} \right.
     \end{equation}
 
-    \par 
-    Depois subtraímos cada uma das equações a partir da primeira para 
-    denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida 
-    linearizamos o sistema (Equação~\ref{eq:lin})
-     que também pode ser escrito no formato de matriz $b = AX$. Esse algortimo requer pouca computação e está em uso em muitos sistemas de localização.    
+    \par
+    Depois subtraímos cada uma das equações a partir da primeira para
+    denotar $b_{i1}= \frac{1}{2}(x_1^2 - x_i^2 + y_1^2 -y_i^2 + r_i^2 - r_1^2)$, sendo que $i = [2,3, ..., n]$ e em seguida
+    linearizar o sistema (Equação~\ref{eq:lin})
+     que também pode ser escrito no formato de matriz $b = AX$. Esse algoritmo requer pouca computação e está em uso em muitos sistemas de localização.    
 
     
     \begin{equation}
@@ -230,7 +230,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
 
 
     \subsection{Inferência Bayesiana}
-  Segundo \citeonline{bayesian2001} a inferência bayesiana é dedução estatística através de evidências ou analíse observatória para que a inferência de uma hipótese possa vir a ser verdadeira, e no caso da localização de um dispositvo isso pode ser realizado utilizando RSS entre o nó de destino e os pontos de acesso.
+  Segundo \citeonline{bayesian2001} a inferência bayesiana é dedução estatística através de evidências ou análise observatória para que a inferência de uma hipótese possa vir a ser verdadeira, e no caso da localização de um dispositivo isso pode ser realizado utilizando RSS entre o nó de destino e os pontos de acesso.
 
 
     \begin{figure}[H]
@@ -240,24 +240,24 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
               \legend{Fonte: \cite{rfid2009review}}
         \end{figure}
 
-        Na \autoref{fig:bayesian} temos uma representação de uma rede bayesiana para localização estacionária, onde as coordenadas $(x,y)$ representam o nó que será localizado e o $S_i$, $i=1,...,n$ são uma série de intesidades de sinais trasmitidas ou recibidas pelos pontos de refências do sistema, como nesse sistema as probabilidade de $S_i$ são idependentes e não interferem uma na outra dizemos que há uma satisfação em relação a condição de Markov \cite{rfid2009review}.
+        Na \autoref{fig:bayesian} temos uma representação de uma rede bayesiana para localização estacionária, onde as coordenadas $(x,y)$ representam o nó que será localizado e o $S_i$, $i=1,...,n$ são uma série de intensidades de sinais transmitidas ou recebidas pelos pontos de referências do sistema, como nesse sistema as probabilidade de $S_i$ são independentes e não interferem uma na outra dizemos que há uma satisfação em relação a condição de Markov \cite{rfid2009review}.
         \par
-        \citeonline{rfid2009review} afirma que a localização do dispositvo alvo pode ser obtida atravé da fórmula recursiva 
-        $P((x,y) | s_1, s_2, ..., s_n) = \alpha P(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$, nessa expressão $\alpha$ é um fator de nomalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante resaltar que essa é uma expressão para localizar alvos estáticos. 
+        \citeonline{rfid2009review} afirma que a localização do dispositivo alvo pode ser obtida através da fórmula recursiva
+        $P((x,y) | s_1, s_2, ..., s_n) = \alpha P(s_n | (x,y)) \times P((x,y) | s_1,s_2, ...,s_{n-1})$, nesta expressão $\alpha$ é um fator de normalização para que a soma da probabilidade posterior, no caso a primeira parte da expressão $P((x,y) | s_1, s_2, ..., s_n)$ seja uma e $(s_n | (x,y))$ calcule a probabilidade da RSSI dada para a localização do dispositivo, é importante ressaltar que essa é uma expressão para localizar alvos estáticos.
         
     \subsection{K-Nearest-Neighbor}
-    Os algoritmos de vizinhaça ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve 
-    utilizar os nó ja classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN}, 
+    Os algoritmos de vizinhança ou no caso de \textit{nearest-neighbor} tem uma abordagem bem simples que envolve
+    utilizar os nó já classificados para classificar os novos nós a partir da medida de similaridade \cite{knn-3dLAN},
     de outro modo, utilizar-se dos seus vizinhos para assim obter suas coordenadas com os cálculos baseados em RSS \cite{rfid2009review}.
     %
-    Algumas das metricas abordada por \citeonline{knn-3dLAN} são:
+    Algumas das métricas abordada por \citeonline{knn-3dLAN} são:
 
     \begin{itemize}
-    \item Distância Euclidiana 
+    \item Distância Euclidiana
       \par
       $Dist(r,s) =  \sqrt{(x_r - x_s)(x_r - x_s)^\prime}$
     \item Padronização da Distância Euclidiana
-      \par 
+      \par
       $Dist(r,s) =  \sqrt{(x_r - x_s)D^-1(x_r - x_s)^\prime}$
     \item Distância de Mahalanobis
       \par
@@ -277,19 +277,19 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
    \left \{ \begin{array}{c}
         x= \sum_{i=1}^{k}w_{i}x_{i}   \\
         y= \sum_{i=1}^{k}w_{i}y_{i}  
-   \end{array} \right. 
+   \end{array} \right.
    \end{equation}
     
-    Nesse sistema o $k$ representa a quantidade de vizinhos, $(x_i,y_i)$ são as coordenadas dos pontos de refências vizinhos e $w_i$ os pesos desses pontos,o cálculo dos pesos é feito a partir da diferençã de RSSI entre os pontos de refências e o alvo e as fórmulas para tal são:
+    Nesse sistema o $k$ representa a quantidade de vizinhos, $(x_i,y_i)$ são as coordenadas dos pontos de referências vizinhos e $w_i$ os pesos desses pontos,o cálculo dos pesos é feito a partir da diferença de RSSI entre os pontos de referências e o alvo e as fórmulas para tal são:
     \begin{itemize}
-        \item $w_i = \frac{1 / \sum_{j=1}^{m}|s_{ij} - s_{j}|}{\sum_{j=1}^{k} (1/ \sum_{j=1}^{m}|s_{ij} - s_{j}|)}$ 
+        \item $w_i = \frac{1 / \sum_{j=1}^{m}|s_{ij} - s_{j}|}{\sum_{j=1}^{k} (1/ \sum_{j=1}^{m}|s_{ij} - s_{j}|)}$
         
-        \item  $w_i = \frac{1 / \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2}}{\sum_{j=1}^{k} (1/ \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2})}$ 
+        \item  $w_i = \frac{1 / \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2}}{\sum_{j=1}^{k} (1/ \sqrt{\sum_{j=1}^{m}(s_{ij} - s_{j})^2})}$
     \end{itemize}$\\$
-    nas expressões de $w_i$, dizemos que $s_j$ e $s_{ij}$, $j =1, ..., m$ represetam  RSSI dos respectivos ponto de referências e nó alvo que será localizado. 
+    nas expressões de $w_i$, dizemos que $s_j$ e $s_{ij}$, $j =1, ..., m$ representam  RSSI dos respectivos ponto de referências e nó alvo que será localizado.
     
     \subsection{Proximidade}
-    A técnica de Proximidade, segundo \citeonline{rfidProximity} baseia-se no princípio de que se o alvo está no alcance de uma antena ou leitor, sua localização será a mesma que a da antena e se o alvo está no alcance de duas ou mais antenas, a localização dada é aquela cujo possui a intensidade do sinal mais forte. Já para \citeonline{rfid2009review} quando o alvo esta no alcance de dois ou mais receptores, utiliza-se o calculo de centroíde para estimar a localização.
+    A técnica de Proximidade, segundo \citeonline{rfidProximity} baseia-se no princípio de que se o alvo está no alcance de uma antena ou leitor, sua localização será a mesma que a da antena e se o alvo está no alcance de duas ou mais antenas, a localização dada é aquela cujo possui a intensidade do sinal mais forte. Já para \citeonline{rfid2009review} quando o alvo está no alcance de dois ou mais receptores, utiliza-se o cálculo de centróide para estimar a localização.
     
     %\subsection{Aprendizado Baseada em Kernel}
 \section{Modelagem de Sistemas}
@@ -297,7 +297,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \subsection{UML - \textit{Unified Modeling Language}}
     O UML (em português Linguagem de Modelagem Unificada) é uma linguagem cujo principal papel é a construção, visualização e documentação de projetos de sistemas. Surgiu na década de 90, tendo em vista que havia a necessidade de uma linguagem para modelagem que funcionasse como uma norma e fosse aceita e utilizada pela indústria, ambientes acadêmicos e de investigação \cite{uml}.
     \par
-    Na UML é possível agrupar elementos e relaciona-los de maneira lógica ou estrutural, isso é o conceito de diagramas. Os elementos tem um papel importante nos modelos, eles estarão organizados de acordos com a função desempenhada no sistema, podendo representar componetes do sistema, usuário, interfaces \cite{uml}.
+    Na UML é possível agrupar elementos e relacioná-los de maneira lógica ou estrutural, isso é o conceito de diagramas. Os elementos têm um papel importante nos modelos, eles estarão organizados de acordos com a função desempenhada no sistema, podendo representar componentes do sistema, usuário, interfaces \cite{uml}.
     
     \begin{figure}[H]
               \caption{\label{fig:uml-elementos}{Elementos UML}}
@@ -306,43 +306,43 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
               \legend{Fonte: \cite{uml}}
         \end{figure}
     \par
-    Na \autoref{fig:uml-elementos} está um resumo de alguns elementos básicos que é utilizados em modelos de projetos de software, esses compontes por mais que sejam básicos, possibilitam a representação de vários componentes em um projeto. A seguir uma breve descrição dos diagramas comuns da UML.
+    Na \autoref{fig:uml-elementos} está um resumo de alguns elementos básicos que é utilizados em modelos de projetos de software, esses componentes por mais que sejam básicos, possibilitam a representação de vários componentes em um projeto. A seguir uma breve descrição dos diagramas comuns da UML.
     
     \begin{itemize}
-       \item \textbf{Diagrama de Classe -} 
+       \item \textbf{Diagrama de Classe -}
        Descreve a estrutura do sistema, como o modelo geral de informações utilizando orientação a objetos \cite{nunesfundamental}.
         
-        \item \textbf{Diagrama de Caso de Uso -} 
+        \item \textbf{Diagrama de Caso de Uso -}
         Descreve as funcionalidades do sistema, ou seja nesse diagrama é apresentado o'que o sistema deve fazer e os serviços que serão disponibilizados para os utilizados \cite{nunesfundamental}.
         
-        \item \textbf{Diagrama de Estados -} 
+        \item \textbf{Diagrama de Estados -}
         Descreve o comportamento dos objetos, as representação dos possíveis estados de um objeto e eventos que alteram valores de atributos dos objetos desencadeando as transições \cite{uml}.
         
-        \item \textbf{Diagrama de Sequência -} 
+        \item \textbf{Diagrama de Sequência -}
         Descreve as interações dos objetos no sistema em determinado período de tempo. Essa interação é realizada por meio de troca de mensagens síncrona ou assíncrona e cada objeto possui uma linha temporal \cite{uml}.
         
         \item \textbf{Diagrama de Componentes -}
-        Descreve interações entre objetos dando ênfase maior as ligações entre objetos e númerando as mensagens dessa forma não apresenta o tempo como no diagrama de sequência \cite{uml}.
+        Descreve interações entre objetos dando ênfase maior as ligações entre objetos e numerando as mensagens dessa forma não apresenta o tempo como no diagrama de sequência \cite{uml}.
         
-        \item \textbf{Diagrama de Caso de Uso -} 
+        \item \textbf{Diagrama de Caso de Uso -}
         Descreve as funcionalidades do sistema, ou seja nesse diagrama é apresentado o'que o sistema deve fazer e os serviços que serão disponibilizados para os utilizados \cite{nunesfundamental}.
         
-        \item \textbf{Diagrama de Estados -} 
+        \item \textbf{Diagrama de Estados -}
         Descreve o comportamento dos objetos, as representação dos possíveis estados de um objeto e eventos que alteram valores de atributos dos objetos desencadeando as transições \cite{uml}.
         
-        \item \textbf{Diagrama de Atividade -} 
+        \item \textbf{Diagrama de Atividade -}
         Descreve o fluxo de trabalho que classifica os estados de "estados de atividades", onde e realizados a transições quando há a conclusão das atividades dos estados anteriores \cite{uml}.
         
-        \item \textbf{Diagrama de Sequência -} 
+        \item \textbf{Diagrama de Sequência -}
         Descreve as interações dos objetos no sistema em determinado período de tempo. Essa interação é realizada por meio de troca de mensagens síncrona ou assíncrona e cada objeto possui uma linha temporal \cite{uml}.
         
-        \item \textbf{Diagrama de Componentes -} 
+        \item \textbf{Diagrama de Componentes -}
         Descreve interações entre objetos dando ênfase maior as ligações entre objetos e numerando as mensagens dessa forma não apresenta o tempo como no diagrama de sequência \cite{uml}.
 
     \end{itemize}
 
     \subsection{Redes de Petri}
-        Redes de Petri é uma técnica utilizada para modelagem formal de sistemas que possuem atividade paralelas, concorrentes, assíncronas e não-determinísticas, também definida como modelo matemático para representação gráfica, esse modelo foi proposto por Carl Petri\cite{cardoso1997redes}. As redes de petri compôe-se de conjuntos de lugares, transições e tokens, os tokens são como fichas no modelo podendo ser produzidos ou consumidos nas transições,  \cite{formalVerificationUML}.
+        Redes de Petri é uma técnica utilizada para modelagem formal de sistemas que possuem atividade paralelas, concorrentes, assíncronas e não-determinísticas, também definida como modelo matemático para representação gráfica, esse modelo foi proposto por Carl Petri\cite{cardoso1997redes}. As redes de petri compõe-se de conjuntos de lugares, transições e tokens, os tokens são como fichas no modelo podendo ser produzidos ou consumidos nas transições,  \cite{formalVerificationUML}.
         
         \par
         De maneira formal \citeonline{formalVerificationUML} define rede de Petri como uma quintuplica $\langle P,T,F,W,u\rangle$, onde $P$ representa o conjunto finitos de lugares $\{ p_1, p_2,..., p_n \}$, $T$ representa o conjunto finito de transições $\{t_1, t_2,..., t_n\}$, $F$ representa o conjunto finitos de arcos $F\subseteq (P \times T) \cup (T \times P)$, $W$ é a relação de pesos associadas aos arcos $W : F \rightarrow \mathbb{N}$ , e por fim $u$ define a quantidade de tokens em cada lugar $u : P \rightarrow \mathbb{N}$.
@@ -360,5 +360,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
               \includegraphics[width=0.7\textwidth]{Figuras/exemplo_rede_petri.png}
               \legend{Fonte: \cite{murata}}
         \end{figure}
-        \par 
-        No exemplo da \autoref{fig:rede_petri} temos a representação de um sistema produto-consumidor, onde o consumidor A tem prioridade sobre o consumidor B nesse sentido é possível notar que A pode consumir desde o \textit{buffer} A tenha tokens, contudo B so poderá consumir se o \textit{buffer} A estiver vazio e o \textit{buffer} B possuir tokens \cite{murata}.
+        \par
+        No exemplo da \autoref{fig:rede_petri} temos a representação de um sistema produtor-consumidor, onde o consumidor A tem prioridade sobre o consumidor B nesse sentido é possível notar que A pode consumir desde o \textit{buffer} A tenha tokens, contudo B só poderá consumir se o \textit{buffer} A estiver vazio e o \textit{buffer} B possuir tokens \cite{murata}.
+
+
