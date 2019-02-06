@@ -1,6 +1,6 @@
 \label{chapter:metodo}
 
-Este capítulo tem o objetivo de descrever a solução proposta neste trabalho, visando localizar e identificar objetos
+Este capítulo tem o objetivo de descrever a solução proposta neste trabalho. Essa solução visa localizar e identificar objetos
 em ambientes confinados utilizando leitores e etiquetas passivas RFID, para gerenciamento e controle de bens.
 %
 Esta solução pode ser aplicada, por exemplo, para o controle e levantamento de patriminio de universidades.
@@ -18,7 +18,7 @@ comunicação com um servidor web.
 
 
 Cada leitor RFID junto ao controlador será responsável por uma sala, portanto qualquer etiqueta lida por aquele leitor
-ocasionará nas ações referentes a mesma sala. As ações poderá ser de atualização sobre a localização do objeto ou informando
+ocasionará nas ações referentes a mesma sala. As ações poderão ser de atualização sobre a localização do objeto ou informando
 que o objeto está em transição para outra sala no edifício.
 \begin{figure}[H]
               \caption{\label{fig:modelo}{Modelo Proposto}}
@@ -29,7 +29,7 @@ que o objeto está em transição para outra sala no edifício.
 
 \par
 Na \autoref{fig:modelo} é possível notar que há um dispositivo acoplado próximo a
-porta de cada sala, esse dispositivo contém o leitor RFID, esse dispositivo será encarregado de consultar um
+porta de cada sala, esse dispositivo contém o leitor RFID e será encarregado de consultar um
 servidor para assim tomar decisões do que será feito com o status do objeto, cada objeto possui uma tag RFID fixada
 nele e quando passar pela porta o leitor identifica o objeto e altera sua as informações sobre sua localização.
 
@@ -46,7 +46,7 @@ O método proposto consiste basicamente nas seguintes etapas:
 \section{Identificação dos objetos rastreáveis}
 
 Antes de qualquer passo, e visando a implantação do sistema proposto, é necessário a identificação dos objetos.
-Nessa etapa é anexado ao objetos as etiquetas RFID e realizada uma descrição do objeto portador dessa etiqueta
+Nessa etapa são anexado ao objetos as etiquetas RFID e realizada uma descrição do objeto portador dessa etiqueta
 no sistema, para que ao entrar e sair das salas do edifício além de fornecer a localização do objeto também seja
 possível ter detalhes sobre aquele objeto, dessa forma se objeto tiver uma registro local isso irá constar na
 descrição do objeto. Essa etapa pode ser considerada como a fase de cadastro do objeto.
@@ -119,7 +119,7 @@ ser definido uma área de limite para alguns objetos e ele sejam deslocados para
 
 \par
 Cada transição de objeto também será armazenada nos logs do sistema com data e hora, sala que saiu ou entrou, para que
-os eventos ocorridos sejam registrados e possua mais um recurso na consulta para caso ocorra falhas.
+os eventos ocorridos sejam registrados e possua mais um recurso na consulta para caso ocorram falhas.
 %\todo[inline,color=green]{Sugiro descrever um pouco mais, talvez falar que com os dados de log das
 %transições do sistema é possível também delimitar
 %salas que objetos não podem sair, ou não podem entrar, criando zonas de controle.}
