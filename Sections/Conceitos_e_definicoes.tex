@@ -33,19 +33,27 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
    \begin{figure}[h!]
               \caption{\label{fig:ATmega}{Microcontrolador ATmega328P}}
               \centering
-              \includegraphics[width=0.4\textwidth]{Figuras/atmega.PNG}
+              \includegraphics[width=0.3\textwidth]{Figuras/atmega.PNG}
               \legend{Fonte: \cite{arduino}}
     \end{figure}
-    \begin{figure}[h!]
+ 
+    \par
+    O Arduíno é uma popular ferramenta para desenvolvimento de aplicações IoT (\textit{Internet of things}, Internet das coisas), também sendo utilizado para ensino e seu hardware é \textit{Open Source} possibilitando que a comunidade contribua com tutoriais e suporte. O Arduíno Nano é mostrado na \autoref{fig:arduino nano}, é uma placa difundida e designers, engenheiros, estudantes, desenvolvedores e fabricantes de todo o mundo estão usando o Arduíno para inovar \cite{arduino}.
+     \begin{figure}[h!]
               \caption{\label{fig:arduino nano}{Arduíno Nano}}
               \centering
-              \includegraphics[width=0.5\textwidth]{Figuras/arduino_nano.png}
+              \includegraphics[width=0.6\textwidth]{Figuras/arduino_nano.png}
               \legend{Fonte: \cite{arduino}}
     \end{figure}
     \par
-    O Arduíno é uma popular ferramenta para desenvolvimento de aplicações IoT (\textit{Internet of things}, Internet das coisas), também sendo utilizado para ensino e seu hardware é \textit{Open Source} possibilitando que a comunidade contribua com tutoriais e suporte. O Arduíno Nano é mostrado na \autoref{fig:arduino nano}, é uma placa difundida e designers, engenheiros, estudantes, desenvolvedores e fabricantes de todo o mundo estão usando o Arduíno para inovar \cite{arduino}.
-    
-%  
+    Uma outra ferramenta de desenvolvimento é o NodeMcu, uma placa \textit{Open Source} que combina o chip ESP8266 (ESP-12E) com a pilha de protocolos TCP/IP integrada, essa combinação possibilita a conectividade com rede WiFi. O NodeMcu conta com um processador (Tensilica LX106) podendo atingir 160MHz, possui uma memória RAM de 20KB e memória flash de 4MB. A linha de programação pode ser realizada utilizando LUA ou a IDE do Arduíno \cite{nodemcu}.
+    \par
+     \begin{figure}[h!]
+              \caption{\label{fig:arduino nano}{NodeMcu}}
+              \centering
+              \includegraphics[width=0.6\textwidth]{Figuras/esp8266-nodemcu.png}
+              \legend{Fonte: \cite{imgnodemcu}}
+    \end{figure}
     \subsection{\textit{Internet of Things }(IoT)}
     \par
     A possibilidade de comunicação entre objetos de uso cotidiano do ambiente real com a internet referência o termo IoT, quando um objeto está conectado a rede de computadores e passa a transmitir informações de seu funcionamento ou estado, tal objeto passa a ser denominado de objeto inteligente \cite{iot2016}.
@@ -105,7 +113,7 @@ Segundo \citeonline{rodrigo2016} sistemas embarcados estão presente em quase to
               \legend{Fonte: \cite{torres2001}}
         \end{figure}
         \par
-        De outro modo a \autoref{fig:direcional} mostra que o primeiro transmissor deve estar direcionado para a direcção do segundo transmissor, e assim deve acontecer com o segundo transmissor também.
+        De outro modo a \autoref{fig:direcional} mostra que o primeiro transmissor deve estar direcionado para a direção do segundo transmissor, e assim deve acontecer com o segundo transmissor também.
         \end{itemize}    
 \section{Localização}
 \par
@@ -114,7 +122,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
     \par
     GPS é um sistema de posicionamento global implementado pelo programa NAVSTAR \textit{(Navigation System Timing and Ranging)}, iniciado no ano de 1973. Era mantido pela divisão de sistema espacial dos Estados Unidos e era destinado apenas para uso militar \cite{gpsEduardo2005}.
     \par
-   O principal objetivo do uso de GPS é determinar as coordenadas espaciais de pontos referentes a um sistema mundial, para isso o sistema faz uso de distâncias entre quatros satélites, a posição do receptor é calculada a partir dos sinais recebido pelos satélites \cite{gpsEduardo2005}.
+   O principal objetivo do uso de GPS é determinar as coordenadas espaciais de pontos referentes a um sistema mundial, para isso o sistema faz uso de distâncias entre quatro satélites, a posição do receptor é calculada a partir dos sinais recebido pelos satélites \cite{gpsEduardo2005}.
 
    \begin{figure}[H]
               \caption{\label{fig:satelites}{Constelação de Satélites.}}
@@ -180,7 +188,7 @@ Segundo \citeonline{rfid2009review}, as informações situacionais de pessoas ou
     \begin{figure}[H]
               \caption{\label{fig:landmarc2a}{LANDMARC.}}
               \centering
-              \includegraphics[width=0.4\textwidth]{Figuras/landmarc2a.png}
+              \includegraphics[width=0.4\textwidth]{Figuras/landmarc2a(1).png}
               \legend{Fonte: \cite{landmarc}}
         \end{figure}
     \par
@@ -291,7 +299,25 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \subsection{Proximidade}
     A técnica de Proximidade, segundo \citeonline{rfidProximity} baseia-se no princípio de que se o alvo está no alcance de uma antena ou leitor, sua localização será a mesma que a da antena e se o alvo está no alcance de duas ou mais antenas, a localização dada é aquela cujo possui a intensidade do sinal mais forte. Já para \citeonline{rfid2009review} quando o alvo está no alcance de dois ou mais receptores, utiliza-se o cálculo de centróide para estimar a localização.
     
-    %\subsection{Aprendizado Baseada em Kernel}
+\section{Node.js}
+    De acordo com \citeonline{node} Node.js é um ambiente para desenvolvimento \textit{server-side} que utiliza JavaScript como linguagem de programação. É baseado no V8 um interpretador JavaScript desenvolvido pela Google e ambos são implementados em C e C++ para ter baixo consumo de memória e alta performa, isso só é possível pois antes de executar, o código é compilado para linguagem nativa para em seguida ser executado.
+    \par
+    Node.js é uma plataforma escalável permitindo a programação direta com os protocolos de rede ou a utilização de bibliotecas para acessar os recursos do sistema operacional. Uma outra vantagem do Node.js é que ele possui seu próprio gerenciado de pacotes o NPM (\textit{Node Package Manager}), através dele é possível instalar, remover, listar ou atualizar novos módulos \cite{pereira2014aplicacoes}.
+    \par
+    Alguns módulos do Node.js:
+    \begin{itemize}
+        \item Mongoose: é uma biblioteca que tem como finalidade a modelagem de objetos do MongoDB;   
+        \item Express: é uma biblioteca que fornece ferramentas e recursos para desenvolver aplicações web e sistema de roteamento;
+        \item Body-parser: é um analisador de requisição sob a entrada \textit{req.bory};
+        \item EJS: é uma linguagem de \textit{templates} quer permite gerar marcações HTML com JavaScript;
+        \item Moment: é uma biblioteca para manipulação, validação, analisa e formatar datas;
+        \item Fs: é uma biblioteca para manipulação e criação de arquivos;
+        \item Nodemailer: é uma biblioteca para envio de e-mail a partir da aplicação.
+    \end{itemize}
+\section{MongoDB} 
+    Segundo \cite{mongodb} o MongoDB é um sistema de gestão de base de dados(SGBD) NoSQL (não relacional), \textit{open source} e multiplataforma. Foi desenvolvido utilizando a linguagem de programação C++ em 2007. O MongoDB utiliza o formato BSON (Binary JSON) para armazenar os documentos, tais documentos são agrupados em coleções de acordo com sua estrutura e a identificação é feita por meio de ID, também podendo ser feita de maneira combinatória com ID e \textit{timestamp}. 
+    \par
+    MongoDB é um SGBD ágil e muito escalável, o seu nome vem da palavra ''hu\textbf{mongo}us'' que enfatiza a escalabilidade e alto desempenho que o MongoDB fornece. Como é baseado NoSQL descarta o uso de colunas e linhas como em banco de dados relacional e basicamente faz uso de objetos como modelo \cite{dayley2014node}.
 \section{Modelagem de Sistemas}
     Esta seção tem por finalidade apresentar as forma cujo os sistemas computacionais são modelados de maneira abstrata, o processo de modelagem de sistema tem papel importante pois ajuda a entender e extrair os requisitos necessários para a construção do sistema.
     \subsection{UML - \textit{Unified Modeling Language}}
@@ -325,7 +351,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         Descreve interações entre objetos dando ênfase maior as ligações entre objetos e numerando as mensagens dessa forma não apresenta o tempo como no diagrama de sequência \cite{uml}.
         
         \item \textbf{Diagrama de Caso de Uso -}
-        Descreve as funcionalidades do sistema, ou seja nesse diagrama é apresentado o'que o sistema deve fazer e os serviços que serão disponibilizados para os utilizadores \cite{nunesfundamental}.
+        Descreve as funcionalidades do sistema, ou seja nesse diagrama é apresentado o que o sistema deve fazer e os serviços que serão disponibilizados para os utilizadores \cite{nunesfundamental}.
         
         \item \textbf{Diagrama de Estados -}
         Descreve o comportamento dos objetos, as representação dos possíveis estados de um objeto e eventos que alteram valores de atributos dos objetos desencadeando as transições \cite{uml}.
