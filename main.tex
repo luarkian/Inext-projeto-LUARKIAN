@@ -61,6 +61,42 @@
              {ç}{{\c{c}}}1,
 }
 
+\usepackage{xcolor}
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
 \renewcommand{\lstlistlistingname}{Lista de códigos}
 
 % Configura a ``Lista de Códigos'' conforme as regras da ABNT (para abnTeX2)
@@ -163,7 +199,7 @@
 
 \autor{LUARKIAN KAYPE DE SOUSA}
 \local{Boa Vista - RR}
-\data{2018}
+\data{2019}
 \orientador{Dr. Herbert Oliveira Rocha}
 
 \tipotrabalho{Monografia}
@@ -175,7 +211,7 @@
 % ---
 
 %-- Informações de dado para a FOLHA DE APROVAÇÃO
-\renewcommand{\dataDefesa}{13 de Dezembro de 2018}
+\renewcommand{\dataDefesa}{10 de Julho de 2019}
 \renewcommand{\orientadorBanca}{Prof. Dr. Herbert Oliveira Rocha}
 \renewcommand{\primeiroMembroBanca}{Prof. MSc. Acauan Cardoso Ribeiro}
 \renewcommand{\segundoMembroBanca}{Prof. Dr. Leandro Nelinho Balico}
@@ -415,7 +451,7 @@ identificar objetos etiquetados em edifícios.
 % ----------------------------------------------------------
 % Resultados -- Pode vir junto com discussão
 % ----------------------------------------------------------
-\chapter{RESULTADOS EXPERIMENTAIS}
+\chapter{AVALIAÇÃO EXPERIMENTAL}
 \input{Sections/Resultados.tex}
 %\chapter{DISCUSSÃO}
 
@@ -426,7 +462,12 @@ identificar objetos etiquetados em edifícios.
 \input{Sections/Consideracoes.tex}
 %\newpage
 % ----------------------------------------------------------
-\chapter{APÊNDICE}
+\chapter{ANEXO A}
+\input{Sections/Anexo.tex}
+%\newpage
+% ----------------------------------------------------------
+% ----------------------------------------------------------
+\chapter{APÊNDICE A}
 \input{Sections/Apendice.tex}
 %\newpage
 % ----------------------------------------------------------
