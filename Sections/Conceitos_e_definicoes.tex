@@ -317,7 +317,7 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
 \section{MongoDB} 
     Segundo \cite{mongodb} o MongoDB é um sistema de gestão de base de dados(SGBD) NoSQL (não relacional), \textit{open source} e multiplataforma. Foi desenvolvido utilizando a linguagem de programação C++ em 2007. O MongoDB utiliza o formato BSON (Binary JSON) para armazenar os documentos, tais documentos são agrupados em coleções de acordo com sua estrutura e a identificação é feita por meio de ID, também podendo ser feita de maneira combinatória com ID e \textit{timestamp}. 
     \par
-    MongoDB é um SGBD ágil e muito escalável, o seu nome vem da palavra ''hu\textbf{mongo}us'' que enfatiza a escalabilidade e alto desempenho que o MongoDB fornece. Como é baseado NoSQL descarta o uso de colunas e linhas como em banco de dados relacional e basicamente faz uso de objetos como modelo \cite{dayley2014node}.
+    MongoDB é um SGBD ágil e muito escalável, o seu nome vem da palavra ``hu\textbf{mongo}us'' que enfatiza a escalabilidade e alto desempenho que o MongoDB fornece. Como é baseado NoSQL descarta o uso de colunas e linhas como em banco de dados relacional e basicamente faz uso de objetos como modelo \cite{dayley2014node}.
 \section{Modelagem de Sistemas}
     Esta seção tem por finalidade apresentar as forma cujo os sistemas computacionais são modelados de maneira abstrata, o processo de modelagem de sistema tem papel importante pois ajuda a entender e extrair os requisitos necessários para a construção do sistema.
     \subsection{UML - \textit{Unified Modeling Language}}
@@ -334,6 +334,13 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
     \par
     Na \autoref{fig:uml-elementos} está um resumo de alguns elementos básicos que é utilizados em modelos de projetos de software, esses componentes por mais que sejam básicos, possibilitam a representação de vários componentes em um projeto. A seguir uma breve descrição dos diagramas comuns da UML.
     
+    \begin{itemize}
+        \item \textbf{Diagrama de Caso de Uso -}
+        Descreve as funcionalidades do sistema, ou seja nesse diagrama é apresentado o que o sistema deve fazer e os serviços que serão disponibilizados para os utilizadores \cite{nunesfundamental}. 
+    \end{itemize}
+\begin{comment}
+    
+
     \begin{itemize}
        \item \textbf{Diagrama de Classe -}
        Descreve a estrutura do sistema, como o modelo geral de informações utilizando orientação a objetos \cite{nunesfundamental}.
@@ -388,5 +395,5 @@ Nesta seção serão abordados alguns dos algoritmos que já foram utilizados pa
         \end{figure}
         \par
         No exemplo da \autoref{fig:rede_petri} temos a representação de um sistema produtor-consumidor, onde o consumidor A tem prioridade sobre o consumidor B nesse sentido é possível notar que A pode consumir desde o \textit{buffer} A tenha tokens, contudo B só poderá consumir se o \textit{buffer} A estiver vazio e o \textit{buffer} B possuir tokens \cite{murata}.
-
+\end{comment}
 

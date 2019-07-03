@@ -44,6 +44,15 @@ O método proposto consiste nas seguintes etapas:
     \item Levantamento de todos objetos etiquetados cadastrados no sistema.
 \end{enumerate}
 
+\todo[inline]{Aqui sugiro apresentar pelo meno um diagrama UML de caso de uso do seu sistema. Para consolidar o background das seções.}
+\par
+As funcionalidades do sistema e a interação com o usuário pode ser visualizada na \autoref{fig:caso_uso}. As setas partindo do ator usuário ate o módulo representa funções que são realizadas pelo próprio usuário do sistema, enquanto que as setas que saem dos módulos e chegam no servidor são as operações que são solicitadas e o servidor executa e as setas que saem do servidor e chegam nos módulos representa operações que o servidor executa de forma automática.
+\begin{figure}[H]
+              \caption{\label{fig:caso_uso}{Caso de uso}}
+              \centering
+              \includegraphics[width=1.1\textwidth]{Figuras/caso_de_uso.png}
+              \legend{Fonte: Própria}
+        \end{figure}
 %
 %
 \section{Identificação dos objetos rastreáveis}
@@ -63,7 +72,7 @@ Esta etapa consiste na identificação dos objetos. Primeiramente, as etiquetas 
 
 \par
 %Na \autoref{fig:objeto} é apresentado um objeto com uma tag RFID passiva anexada em seu corpo, todos os objetos que serão rastreáveis no sistemas possuirão uma tag RFID anexada da mesma forma.
-\todo[inline]{Sugiro adicionar um texto e uma descrição sobre as etiquetas RFID, bem como, as que são utilizadas no sistema.}
+%\todo[inline]{Sugiro adicionar um texto e uma descrição sobre as etiquetas RFID, bem como, as que são utilizadas no sistema.}
 O segundo passo é realizar o cadastramento dos objetos utilizando algum dispositivo de porta, fazemos com que o dispositivo faça a leitura da tag do objeto, dessa forma o sistema realizará o cadastro da etiqueta porém todas as informações referente aquela etiqueta irão constar no sistema como \textbf{Desconhecido}, assim como a \autoref{fig:tela_inical} mostra. Vale ressaltar que para facilitar este processo de cadastro, as etiquetas RFID podem ser previamente castradas no sistema com o auxilio do dispositivo de porta, sem a necessidade de ter o objeto presente, para então em outro momento apenas efetuar a adição das etiquetas.
 
 % print da tela inicial com novo objeto
@@ -74,7 +83,7 @@ O segundo passo é realizar o cadastramento dos objetos utilizando algum disposi
               \legend{Fonte: Própria}
 \end{figure}
 
-\todo[inline, color=green]{Sugiro ajustar o espaço entre a figura a acima e a legenda.}
+%\todo[inline, color=green]{Sugiro ajustar o espaço entre a figura a acima e a legenda.}
 
 \par
 Durante o cadastro dos objetos, o próximo passo é editar as informações de acordo com o objeto que constam como desconhecido no sistema. Na pagina inicial é listado todos objetos cadastrados e ao lado de cada objeto possui a opção \textbf{Editar} (ver \autoref{fig:objeto}), localizamos o objeto que acabamos de realizar seu cadastro e selecionamos a opção de editar, logo seremos redirecionado para a pagina de edição de objeto e preenchemos o formulário de acordo com as características refente ao objeto desejado, após ter preenchido é necessário clicar no botão \textbf{Salvar} ao final do formulário, conforme \autoref{fig:tela_editar}.  
@@ -122,19 +131,22 @@ informações do servidor para que os dados consultados sejam salvos e criado os
 
 \subsection{Localização dos objetos}
 
-Os objetos são localizado no sistema baseado no algoritmo de proximidade\cite{rfid2009review} \todo[color=green]{Adicionar referência}, ou seja, a partir do momento em que o leitor
+Os objetos são localizado no sistema baseado no algoritmo de proximidade \cite{rfid2009review} %\todo[color=green]{Adicionar referência}
+, ou seja, a partir do momento em que o leitor
 RFID identifica uma etiqueta, esse objeto terá ou deixará de ter a localização referente àquele módulo de porta, cada módulo representa uma sala, portanto as informações referente a localização dos objetos são definidas de acordo com o dispositivo que executa a leitura da etiqueta anexada ao objeto.
 
 %\todo[color=green]{Sugiro descrever mais sobre este servidor web, exemplo de conexão local ou não, banco de dados e
 %outras informações necessárias}
 \par
-O sistema possui um servidor web que para este trabalho foi desenvolvido utilizando o framework Node.js $v10.15$ disponível pra download em \url{https://nodejs.org/en/download/}\todo[color=green]{adicionar link e versão}, que deve está conectado à mesma rede LAN (\textit{local area network}) que os dispositivos de porta. O servidor web também possui uma base de dados, sendo o sistema de gerenciamento de dados o MongoDB $v3.6.5$ disponível em \url{https://www.mongodb.com/download-center/community}\todo[color=green]{adicionar link e versão utilizada}, para armazenar informações e a descrição e informações de cada objeto. Logo, o servidor web é responsável por tratar problemas relacionados as leituras das  etiquetas, também sendo responsável por realizar a levantamento do inventário total e notificar os usuários sobre violações.
+O sistema possui um servidor web que para este trabalho foi desenvolvido utilizando o framework Node.js $v10.15$ disponível pra download em \url{https://nodejs.org/en/download/}%\todo[color=green]{adicionar link e versão}
+, que deve está conectado à mesma rede LAN (\textit{local area network}) que os dispositivos de porta. O servidor web também possui uma base de dados, sendo o sistema de gerenciamento de dados o MongoDB $v3.6.5$ disponível em \url{https://www.mongodb.com/download-center/community}%\todo[color=green]{adicionar link e versão utilizada}
+, para armazenar informações e a descrição e informações de cada objeto. Logo, o servidor web é responsável por tratar problemas relacionados as leituras das  etiquetas, também sendo responsável por realizar a levantamento do inventário total e notificar os usuários sobre violações.
 
 \par
 O Node.js e MongoDB foram as tecnologias escolhidas, pois fornece facilidades no desenvolvimento do \textit{front-end, back-end} e operações com o banco de dados utilizando apenas uma linguagem de programação que é o JavaScript, o custo de hardware dessas tecnologias é baixo viabilizando ainda mais a implementação e pode ser realizado o \textit{deploy} para outro sistema operacional com facilidade.
-\todo[inline, color=green]{Descrever o motivo pelo qual foi escolhido o Node.js e MongoDB, quais as vantagens para o sistema proposto}
+%\todo[inline, color=green]{Descrever o motivo pelo qual foi escolhido o Node.js e MongoDB, quais as vantagens para o sistema proposto}
 
-\todo[inline, color=green]{Sugiro apresentar uma imagem que represente o esquema de conexão da rede dos nós de rede das portas, pontos de acesso até o servidor.}
+%\todo[inline, color=green]{Sugiro apresentar uma imagem que represente o esquema de conexão da rede dos nós de rede das portas, pontos de acesso até o servidor.}
 
 \begin{figure}[H]
               \caption{\label{fig:representacao_rede}{Representação da rede}}
@@ -158,7 +170,7 @@ Visando um melhor gerenciamento e rastreamento dos objetos no sistema proposto, 
 \begin{figure}[H]
               \caption{\label{fig:tela_log}Arquivo de log}
               \centering
-              \includegraphics[width=0.9\textwidth]{Figuras/tela_logs.png}
+              \includegraphics[width=1\textwidth]{Figuras/tela_logs.png}
               \legend{Fonte: Própria}
 \end{figure}
 \par
@@ -167,7 +179,7 @@ Visando um melhor gerenciamento e rastreamento dos objetos no sistema proposto, 
 %transições do sistema é possível também delimitar
 %salas que objetos não podem sair, ou não podem entrar, criando zonas de controle.}
 O sistema também conta a opção de definir restrições aos objetos monitorados, exemplo, um objeto que no campo de restrição tem o nome de uma sala, ao sair dessa sala o sistema identifica esta violação de condição e comunica os administradores enviando um e-mail com os dados do objeto que violou a restrição. Na \autoref{fig:tela_restricao} é mostrado como o objeto com restrição é mostrado no sistema e o e-mail enviado. Essa função é importante para objetos que não podem ser levados para outras salas, tendo que permanecer em uma única sala. 
-\todo[inline, color=green]{Sugiro adicionar um texto descrevendo a importância desta opção do sistema}
+%\todo[inline, color=green]{Sugiro adicionar um texto descrevendo a importância desta opção do sistema}
 \begin{figure}[H]
               \caption{\label{fig:tela_restricao}Restrição}
               \centering
@@ -179,12 +191,13 @@ O sistema também conta a opção de definir restrições aos objetos monitorado
 \section{Conexão dos dispositivos de porta com o servidor}
 
 A comunicação no sistema entre os dispositivos da porta com o servidor web acontece por meio de uma WLAN, ou seja todos devem está em uma rede local e assim poderem se comunicar, entretanto a comunicação será diretamente entre um dispositivo e o servidor,
-não havendo comunicação entre dois dispositivos. Neste trabalho, foi utilizado a placa NodeMcu ESP-12E, \textit{datasheet} disponível em \url{https://www.electrodragon.com/w/ESP-12F_ESP8266_Wifi_Board}, \todo[color=green]{link e versão utilizada} que possui um módulo ESP-8266, esse módulo possibilita a conexão com uma rede wireless 802.11 b/g/n, esse padrão possibilita conexões com velocidade de até $300Mbps$ em um espectro de $2.4GHz$ ou $5GHz$ \todo[color=green]{descrever as vantagens deste tipo de conexão}.
+não havendo comunicação entre dois dispositivos. Neste trabalho, foi utilizado a placa NodeMcu ESP-12E, \textit{datasheet} disponível em \url{https://www.electrodragon.com/w/ESP-12F_ESP8266_Wifi_Board}, %\todo[color=green]{link e versão utilizada} 
+que possui um módulo ESP-8266, esse módulo possibilita a conexão com uma rede wireless 802.11 b/g/n, esse padrão possibilita conexões com velocidade de até $300Mbps$ em um espectro de $2.4GHz$ ou $5GHz$. % \todo[color=green]{descrever as vantagens deste tipo de conexão}.
 %\todo[color=green]{Falar um pouco sobre baixo consumo de energia}.
 
 \par
 Os dispositivos de porta, ao realizar a leitura de um etiqueta, geram um objeto JSON (\textit{JavaScript Object Notation}), esse objeto contém o nome da sala e o identificado da tag RFID, depois de criado o objeto é enviado para o servidor via requisição POST para executar as operações e modificar o status do objeto que esta com a etiqueta anexada.
-\todo[inline, color=green]{Apresentar um exemplo de JSON gerado}
+%\todo[inline, color=green]{Apresentar um exemplo de JSON gerado}
 
 % [H][style=json]
 \begin{lstlisting}[language=json,firstnumber=1]
@@ -198,13 +211,14 @@ Os dispositivos de porta, ao realizar a leitura de um etiqueta, geram um objeto 
 \par
 O NodeMcu opera em uma voltagem de $5$V de energia contínua, um consumo relativamente baixo em relação as outros dispositivos eletrônicos e as etiquetas passivas não possuem alimentação, elas são alimentadas apenas pela energia eletromagnética emitida pelos leitores RFID, esses dois quesitos tornam o protótipo ainda mais viável, pois isso é um fator positivo visto que o custo pós implantação não é alto em relação ao consumo de energia.
 
-\todo[inline]{Sugiro descrever como seria a possibilidade de usar os dispositivos de porta com uma bateria de 9v e qual o tempo de duração (vai ficar para trabalhos futuros)}
+%\todo[inline,color=green]{Sugiro descrever como seria a possibilidade de usar os dispositivos de porta com uma bateria de 9v e qual o tempo de duração (vai ficar para trabalhos futuros)}
 
 
 \section{Dispositivos de porta}
 
-O protótipo desenvolvido neste trabalho comumente chamado de dispositivo da porta, é composto por uma placa NodeMcu e um leitor RFID RC522 Mifare, \textit{datasheet} disponível em \url{https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf} \todo[color= green]{link e versão}. O leitor RFID pode ser visto na \autoref{fig:leitorRFID}, esse leitor é capaz de ler etiquetas que operam em
-frequências de $13,56$ Mhz. 
+O protótipo desenvolvido neste trabalho comumente chamado de dispositivo da porta, é composto por uma placa NodeMcu e um leitor RFID RC522 Mifare, \textit{datasheet} disponível em \url{https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf}.  %\todo[color= green]{link e versão}
+O leitor RFID pode ser visto na \autoref{fig:leitorRFID}, esse leitor é capaz de ler etiquetas que operam em
+frequências de $13,56MHz$. 
 % 
 Vale ressaltar que o protótipo visa avaliar a aplicabilidade do sistema proposto, visto que o leitor RFID pode ser facilmente substituído por outro de maior alcance de leitura das etiquetas.
 % 
@@ -281,12 +295,12 @@ O servidor web foi desenvolvido utilizando a tecnologia Node.js $v10.15$ utiliza
     \item Express-ejs-layouts $v2.5$ - foi utilizada pra acessar as \textit{views}; 
     \item Mongoose $v3.1.13$ - foi utilizada para modelar os objetos;
     \item Nodemailer $v6.1.1$ - foi utilizado para o envio de e-mails a partir da aplicação;
-    \item EJS $v2.6.1$ - foi utilizada para a criação \textit{views} do \textit{front-end};
+    \item EJS $v2.6.1$ - foi utilizada para a criação de \textit{views} do \textit{front-end};
     \item Consign $v0.1.6$ - foi utilizado para realizar o carregamento de \textit{scripts} automaticamente;
     \item Moment $v2.24$ - foi utilizada para a manipulação de datas e hora.
 \end{itemize}
 
-\todo[inline, color=green]{Descrever a função de cada biblioteca utilizada}
+%\todo[inline, color=green]{Descrever a função de cada biblioteca utilizada}
 
 
 % A seguir as bibliotecas foram instaladas mais não foram utilizadas:
@@ -298,7 +312,7 @@ O servidor web foi desenvolvido utilizando a tecnologia Node.js $v10.15$ utiliza
 % \end{itemize}
 
 \par 
-O sistema do servidor web possui as seguintes telas que podem ser vitas no \autoref{chapter:anexo} ANEXO A\todo[color=green]{Criar anexo} :
+O sistema do servidor web possui as seguintes telas que podem ser vitas no \autoref{chapter:anexo} ANEXO A:%\todo[color=green]{Criar anexo} 
 \begin{itemize}
     \item Tela Inicial
     \item Tela de Cadastro de Objeto Manual
@@ -309,9 +323,9 @@ O sistema do servidor web possui as seguintes telas que podem ser vitas no \auto
     \item Tela de Ger. Sala
 \end{itemize}    
 
-\todo[inline]{Sugiro apresentar o storyboard do fluxo entre as telas.}
+%\todo[inline]{Sugiro apresentar o storyboard do fluxo entre as telas.}
 
-\todo[inline, color=green]{Mover estas telas para um Anexo}
+%\todo[inline, color=green]{Mover estas telas para um Anexo}
 
 \subsection{Implementação}
 
@@ -320,7 +334,7 @@ Na codificação do sistema foi utiliza a linguagem de programação JavaScript 
 
 \subsubsection{\textit{Back-End}}
 
-O \textit{Back-End} deste sistema possui estrutura mostrado na \autoref{fig:backend}.
+O \textit{Back-End} deste sistema possui a estrutura mostrado na \autoref{fig:backend}.
 \begin{figure}[H]
 	  \caption{\label{fig:backend}Arquivos do Back-end}
 	  \centering
@@ -389,4 +403,4 @@ Módulos dos arquivos \texttt{objeto.js} contidos nas pastas \textbf{api} e \tex
 \par 
 O arquivo \texttt{server.js} na raiz do diretório é responsável por importar todos os arquivos mencionados anteriormente e iniciar o serviço \textit{HTTP} na porta $3000$. É importante ressaltar que antes de qualquer rota deve ser colocado o endereço IP que o servidor possui na rede WLAN.
 
-\todo[inline]{Seria interessante adicionar uma seção descrevendo os cenários do uso para o levantamento de patrimônio e relação ao da UFRR}
+%\todo[inline]{(Está descrito nos Resultados )Seria interessante adicionar uma seção descrevendo os cenários do uso para o levantamento de patrimônio e relação ao da UFRR}
